@@ -1,0 +1,7 @@
+{
+  "name": "HttpProxyService",
+  "description": "Roblox Proxy.",
+  "repository": "https://github.com/Unstable0/HttpProxyService",
+  "logo": "",
+  "keywords": ["roblox-api", "roblox-proxy", "roblox-http-proxy"]
+}
