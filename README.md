@@ -176,4 +176,4 @@ If you get `IP address mismatch` error, press Control + C on your command line a
 
 Type in your email and password.
 
-After you're logged in, follow [this] tutorial.
+When you're logged in, follow [this](https://youtube.com) tutorial.
