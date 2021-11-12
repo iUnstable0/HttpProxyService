@@ -177,3 +177,5 @@ If you get `IP address mismatch` error, press Control + C on your command line a
 Type in your email and password.
 
 When you're logged in, follow [this](https://youtube.com) tutorial.
+
+*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.
