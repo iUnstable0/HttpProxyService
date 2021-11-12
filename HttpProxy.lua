@@ -2,7 +2,7 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "" -- Your URL here. Example: https://app-name.herokuapp.com (Without '/' at the end)
+local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
 
 function GetUrl(Method, Link)
     return Url .. Method .. "?url=" .. HttpService:UrlEncode(Link)
@@ -57,4 +57,3 @@ function HttpProxyService:PostAsync(Link, Options)
 end
 
 return HttpProxyService
-
