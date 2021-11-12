@@ -63,10 +63,6 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 })
 ```
 
-```lua
-HttpProxyService:GetAsync(URL, Options)
-```
-
 # HttpProxyService:GetAsync
 
 **Parameters**
