@@ -4,12 +4,12 @@ Send HTTP requests to Roblox APIs or Discord Webhooks in-game
 
 # Setup
 
-You will need a [heroku](https://www.heroku.com) account.
+You will need a [Heroku](https://www.heroku.com) account.
 
-- Create a [heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com) for free
-- Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [heroku](https://www.heroku.com) account.
+- Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com) for free
+- Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account.
 
-After you are logged into your [heroku](https://www.heroku.com) account, click [here](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService) or click the button below.
+After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService) or click the button below.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService)
 
@@ -37,7 +37,7 @@ On line 5
 
 ![Screen Shot 2564-11-12 at 4 56 37 PM](https://user-images.githubusercontent.com/46888825/141448026-e9bb49d6-187d-4f01-9c02-6633339e38ab.png)
 
-Paste your [heroku](https://www.heroku.com) app URL that you copied earlier.
+Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 ![Screen Shot 2564-11-12 at 4 42 55 PM](https://user-images.githubusercontent.com/46888825/141448105-74b27588-4bc9-4e68-866c-75a840473da8.png)
 
@@ -140,3 +140,40 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 	}
 })
 ```
+
+# Updating
+
+- Make sure you have [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed on your computer.
+- If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using Standalone installation method.
+
+![Screen Shot 2564-11-12 at 9 15 15 PM](https://user-images.githubusercontent.com/46888825/141480996-bc80b47c-abff-4b1d-8a1e-6e150f7a827f.png)
+
+**For Macs with Apple chip**
+
+If you get this message `unsupported arch: arm64` then close Terminal
+
+Press `Command + Space` to open Spotlight search
+
+Search for `Terminal`, Hold `Command` key and press `Enter` to reveal the file in Finder.
+
+Duplicate the `Terminal` app and rename it to `Terminal with Rosetta`
+
+Right click on `Terminal with Rosetta`, click `Get Info` and enable `Open using Rosetta`
+
+![Screen Shot 2564-11-12 at 9 28 35 PM](https://user-images.githubusercontent.com/46888825/141483020-c12fc3b2-eb98-42ab-bef4-30b07726f22d.png)
+
+After you've enabled it, reinstall heroku again but on `Terminal with Rosetta`.
+
+**After installing**
+
+Open `Terminal` or `Command Prompt` (Open `Terminal with Rosetta` for Macs with Apple chip)
+
+Type this on your command line `heroku login` then press `Enter`.
+
+Follow the instructions on your screen.
+
+If you get `IP address mismatch` error, press Control + C on your command line and type `heroku login -i`, then press `Enter` again.
+
+Type in your email and password.
+
+After you're logged in, follow [this] tutorial.
