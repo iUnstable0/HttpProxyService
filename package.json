@@ -1,0 +1,33 @@
+{
+  "name": "roblox-proxy",
+  "version": "1.0.0",
+  "description": "Roblox Proxy.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engine": {
+    "node": "17.1.0",
+    "npm": "8.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unstable0/Roblox-Proxy.git"
+  },
+  "keywords": [
+    "roblox-proxy",
+    "proxy",
+    "roblox-api",
+    "roblox-apis"
+  ],
+  "author": "Unstable0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Unstable0/Roblox-Proxy/issues"
+  },
+  "homepage": "https://github.com/Unstable0/Roblox-Proxy#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1"
+  }
+}
