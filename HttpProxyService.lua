@@ -2,7 +2,7 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
+local Url = "http://localhost" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
 
 function GetUrl(Method, Link)
     return Url .. Method .. "?url=" .. HttpService:UrlEncode(Link)
@@ -17,6 +17,10 @@ function IsTable(Object)
 end
 
 function HttpProxyService:GetAsync(Link, Options)
+    if Options == nil then
+        Options = {}
+    end
+
     local Data = HttpService:GetAsync(GetUrl("/get", Link), Options.NoCache or false, Options.Headers or nil)
 
     local DecodedData = HttpService:JSONDecode(Data)
@@ -33,6 +37,10 @@ function HttpProxyService:GetAsync(Link, Options)
 end
 
 function HttpProxyService:PostAsync(Link, Options)
+    if Options == nil then
+        Options = {}
+    end
+
     if IsTable(Options.Body) then
         Options.Body = HttpService:JSONEncode(Options.Body)
     end
