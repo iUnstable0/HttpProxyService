@@ -48,7 +48,7 @@ function HttpProxyService:PostAsync(Link, Options)
     local Data = HttpService:PostAsync(
                      GetUrl("/post", Link), Options.Body or {},
                      Enum.HttpContentType[Options.Content_Type or "ApplicationJson"] or Options.Content_Type or
-                         Enum.HttpContentType.ApplicationJson, Options.Compress or false
+                         Enum.HttpContentType.ApplicationJson
                  )
 
     local DecodedData = HttpService:JSONDecode(Data)
