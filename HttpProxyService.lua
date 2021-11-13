@@ -2,8 +2,8 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "http://localhost" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
-local Password = "Mamipoko9421" -- Your password here (Not your ROBLOX account password, your Heroku app password)
+local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
+local Password = "" -- Your password here (Not your ROBLOX account password, your Heroku app password)
 
 function GetUrl(Method, Link)
 	return HttpProxyService:FormatParams(Url .. Method, {
