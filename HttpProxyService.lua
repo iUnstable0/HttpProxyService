@@ -21,12 +21,14 @@ function IsTable(Object)
 end
 
 function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
-	local Data = HttpService:GetAsync(GetUrl("/get", Link), NoCache or true, Headers or nil)
+	Link = GetUrl("/get", Link)
+	
+	local Data = HttpService:GetAsync(Link, NoCache or true, Headers or nil)
 
 	local DecodedData = HttpService:JSONDecode(Data)
 
 	if DecodedData.error then
-		warn(DecodedData.error.message)
+		error(DecodedData.error.message)
 	end
 
 	if Decode == nil or Decode then
@@ -37,6 +39,8 @@ function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
 end
 
 function HttpProxyService:PostAsync(Link, Decode, Data, Headers, Content_Type)
+	Link = GetUrl("/post", Link)
+	
 	local Body = {}
 	
 	if Data ~= nil then
@@ -49,12 +53,12 @@ function HttpProxyService:PostAsync(Link, Decode, Data, Headers, Content_Type)
 	
 	Body = HttpService:JSONEncode(Body)
 	
-	local Data = HttpService:PostAsync(GetUrl("/post", Link), Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
+	local Data = HttpService:PostAsync(Link, Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
 
 	local DecodedData = HttpService:JSONDecode(Data)
 
 	if DecodedData.error then
-		warn(DecodedData.error.message)
+		error(DecodedData.error.message)
 	end
 
 	if Decode == nil or Decode then
