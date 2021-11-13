@@ -91,32 +91,26 @@ print(Data) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Ke
 
 **Parameters**
 
-| Name | Type | Default |
-| ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  |
-| options | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} |
+| Name | Type | Default | Description | Required |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| url | [string](https://developer.roblox.com/en-us/articles/String) |  | The web address you are requesting data from | true |
+| decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
+| nocache | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request stores (cache) the response | false |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 
-**Options**
-
-```lua
-{
-	NoCache = true, --true = Stores (cache) the response, false = Doesn't stores (cache) the response. Default = true
-	Headers = {}, --Send a header. Default = nil.
-	Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
-}
-```
-
-**Examples**
+**Example**
 
 Search roblox catalog with the keyword `Pants` and print the results
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-local Data = HttpProxyService:GetAsync(HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
+local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
 	Category = 3,
 	Keyword = "Pants"
-}))
+})
+
+local Data = HttpProxyService:GetAsync(FormattedData)
 
 for Index, Asset in pairs(Data.data) do
 	print(Asset.name)
@@ -127,29 +121,13 @@ end
 
 **Parameters**
 
-| Name | Type | Default |
-| ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  |
-| options | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} |
-
-**Options**
-
-```lua
-{
-	    Body = {}, --Send a body. Default = {} (Empty body)
-	    Content_Type = "ApplicationJson", --Default = ApplicationJson
-	    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
-}
-```
-
-**Body**
-
-```lua
-{
-	    Data = {}, --Send a data. Default = nil (No data)
-	    Headers = {} --Send a headers. Default = nil (No headers)
-}
-```
+| Name | Type | Default | Description | Required |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| url | [string](https://developer.roblox.com/en-us/articles/String) |  | The web address you are requesting data from | true |
+| decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
+| data | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | The data being sent | false |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
+| content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
 
 **Examples**
 
@@ -158,12 +136,8 @@ Send a `Hello world!` message using discord webhook
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", {
-	Body = {
-		Data = {
-			content = "Hello world!"
-		}
-	}
+HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
+	content = "Hello World!"
 })
 ```
 
