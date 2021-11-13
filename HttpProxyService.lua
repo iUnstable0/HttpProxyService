@@ -2,7 +2,7 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
+local Url = "https://httpproxyservice.herokuapp.com" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
 
 function GetUrl(Method, Link)
 	return Url .. Method .. "?url=" .. HttpService:UrlEncode(Link)
@@ -16,12 +16,8 @@ function IsTable(Object)
 	end
 end
 
-function HttpProxyService:GetAsync(Link, Options)
-	if Options == nil then
-		Options = {}
-	end
-
-	local Data = HttpService:GetAsync(GetUrl("/get", Link), Options.NoCache or t, Options.Headers or nil)
+function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
+	local Data = HttpService:GetAsync(GetUrl("/get", Link), NoCache or true, Headers or nil)
 
 	local DecodedData = HttpService:JSONDecode(Data)
 
@@ -29,27 +25,19 @@ function HttpProxyService:GetAsync(Link, Options)
 		error(Data)
 	end
 
-	if Options.Decode == nil or Options.Decode then
+	if Decode == nil or Decode then
 		return DecodedData
 	else
 		return Data
 	end
 end
 
-function HttpProxyService:PostAsync(Link, Options)
-	if Options == nil then
-		Options = {}
+function HttpProxyService:PostAsync(Link, Decode, Body, Content_Type)
+	if IsTable(Body) then
+		Body = HttpService:JSONEncode(Body)
 	end
 
-	if IsTable(Options.Body) then
-		Options.Body = HttpService:JSONEncode(Options.Body)
-	end
-
-	local Data = HttpService:PostAsync(
-		GetUrl("/post", Link), Options.Body or {},
-		Enum.HttpContentType[Options.Content_Type or "ApplicationJson"] or Options.Content_Type or
-			Enum.HttpContentType.ApplicationJson
-	)
+	local Data = HttpService:PostAsync(GetUrl("/post", Link), Body or {}, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
 
 	local DecodedData = HttpService:JSONDecode(Data)
 
@@ -57,7 +45,7 @@ function HttpProxyService:PostAsync(Link, Options)
 		error(Data)
 	end
 
-	if Options.Decode == nil or Options.Decode then
+	if Decode == nil or Decode then
 		return DecodedData
 	else
 		return Data
