@@ -84,7 +84,7 @@ local Data = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search
 	Keyword = "Pants"
 })
 
-print(Data) > https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
+print(Data) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
 # HttpProxyService:GetAsync
