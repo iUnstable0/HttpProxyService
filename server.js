@@ -9,8 +9,6 @@ const users = {
 
 const tokens = {};
 
-const removeHeaders = ["host", "accept", "accept-encoding", "cache-control", "connection", "user-agent", "roblox-id"]
-
 async function getNewToken(cookie) {
     try {
         await axios.post("https://auth.roblox.com/v2/logout", {}, {
@@ -71,14 +69,12 @@ app.get("/get", async (request, response) => {
         });
     };
 
-    removeHeaders.forEach(function (header) {
-        delete request.headers[header];
-    });
+    var newHeaders = {};
 
-    if ("Cookie" in request.headers) {
-        if (request.headers.Cookie in users) {
-            request.headers.Cookie = ".ROBLOSECURITY=" + users[request.headers.Cookie]
-            request.headers["x-csrf-token"] = await getToken(request.headers.Cookie, false);
+    if ("user" in request.headers) {
+        if (request.headers.user in users) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.headers.user]
+            newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
                 error: {
@@ -89,17 +85,17 @@ app.get("/get", async (request, response) => {
     };
 
     axios.get(request.query.url, {
-        headers: request.headers
+        headers: newHeaders
     })
         .then(function (response2) {
             response.json(response2.data);
         })
         .catch(async function (error) {
             if (error.status === 403) {
-                request.headers["x-csrf-token"] = await getToken(request.headers.Cookie, true);
+                newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
                 axios.get(request.query.url, {
-                    headers: request.headers
+                    headers: newHeaders
                 })
                     .then(function (response2) {
                         response.json(response2.data);
@@ -140,10 +136,12 @@ app.post("/post", async (request, response) => {
         });
     };
 
-    if ("Cookie" in request.body.Headers) {
-        if (request.body.Headers.Cookie in users) {
-            request.body.Headers.Cookie = ".ROBLOSECURITY=" + users[request.body.Headers.Cookie]
-            request.body.Headers["x-csrf-token"] = await getToken(request.body.Headers.Cookie, false);
+    var newHeaders = {};
+
+    if ("user" in request.body.Headers) {
+        if (request.body.Headers.user in users) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.body.Headers.user]
+            newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
                 error: {
@@ -154,17 +152,17 @@ app.post("/post", async (request, response) => {
     };
 
     axios.post(request.query.url, request.body.Data, {
-        headers: request.body.Headers
+        headers: newHeaders
     })
         .then(function (response2) {
             response.json(response2.data);
         })
         .catch(async function (error) {
             if (error.response.status === 403) {
-                request.body.Headers["x-csrf-token"] = await getToken(request.body.Headers.Cookie, true);
+                newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
                 axios.post(request.query.url, request.body.Data, {
-                    headers: request.body.Headers
+                    headers: newHeaders
                 })
                     .then(function (response2) {
                         response.json(response2.data);
@@ -195,5 +193,5 @@ app.post("/post", async (request, response) => {
 // });
 
 app.listen(process.env.PORT || 80, () => {
-    console.log(`Listening on port ${process.env.PORT || 80}`)
+    console.log(`Listening on port ${process.env.PORT || 80}`);
 });
