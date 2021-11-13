@@ -32,12 +32,13 @@ function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
 	end
 end
 
-function HttpProxyService:PostAsync(Link, Decode, Body, Content_Type)
-	if IsTable(Body) then
-		Body = HttpService:JSONEncode(Body)
-	end
-
-	local Data = HttpService:PostAsync(GetUrl("/post", Link), Body or {}, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
+function HttpProxyService:PostAsync(Link, Decode, Data, Headers, Content_Type)
+	local Body = HttpService:JSONEncode({
+		Data = Data or {},
+		Headers = Headers or {}
+	})
+	
+	local Data = HttpService:PostAsync(GetUrl("/post", Link), Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
 
 	local DecodedData = HttpService:JSONDecode(Data)
 
