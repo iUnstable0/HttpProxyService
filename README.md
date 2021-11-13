@@ -76,9 +76,9 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 ```lua
 {
-    NoCache = true, --true = Stores (cache) the response, false = Doesn't stores (cache) the response. Default = false
+    NoCache = true, --true = Stores (cache) the response, false = Doesn't stores (cache) the response. Default = true
     Headers = {}, --Send a header. Default = nil.
-    Decode = true --true = returns a decoded data, false = returns a undecoded data.
+    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
 }
 ```
 
@@ -89,9 +89,7 @@ Search roblox catalog with the keyword `Pants` and print the results
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-local Data = HttpProxyService:GetAsync("https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants", {
-    Decode = true
-})
+local Data = HttpProxyService:GetAsync("https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants")
 
 for Index, Asset in pairs(Data) do
     print(Asset.name)
@@ -112,7 +110,8 @@ end
 ```lua
 {
     Body = {}, --Send a body. Default = {} (Empty body)
-    Content_Type = "ApplicationJson" --Default = ApplicationJson
+    Content_Type = "ApplicationJson", --Default = ApplicationJson
+    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
 }
 ```
 
