@@ -4,12 +4,15 @@ Send HTTP requests to Roblox APIs or Discord Webhooks in-game
 
 # Setup
 
-You will need a [Heroku](https://www.heroku.com) account.
-
-- Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com) for free
-- Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account.
-
 **Recommended Method**
+
+You will need a [Heroku](https://www.heroku.com) and [GitHub](https://www.github.com) account.
+
+- Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com)
+- Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account
+
+- Create a [Github](https://github.com) account [here](https://github.com/signup?user_email=&source=form-home-signup) (https://github.com/signup?user_email=&source=form-home-signup)
+- Login [here](https://github.com/login) (https://github.com/login) if you already have a [GitHub](https://github.com) account
 
 After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to the [dashboard](https://dashboard.heroku.com/apps)
 
@@ -21,21 +24,37 @@ Choose your app name, regoin and then click `Create app`
 
 ![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605458-fc0f6758-38fd-4534-9f34-f04f899f281c.png)
 
-Click on GitHub
+Click on GitHub and click `Connect to GitHub`
 
 ![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605486-2763b76c-6852-4ed4-8f22-875bd7a590b1.png)
 
-Click `Connect to GitHub`
+Click `Authorize heroku` (You have to login into [Github](https://github.com) first)
 
-When you've connected your GitHub account to [Heroku](https://www.heroku.com) , you will see this screen.
+![Screen Shot 2564-11-13 at 11 31 21 AM](https://user-images.githubusercontent.com/46888825/141605716-52563cef-2a17-49d3-af92-b5e95437b9df.png)
 
-![Screen Shot 2564-11-13 at 11 24 34 AM](https://user-images.githubusercontent.com/46888825/141605550-4b4bd3fa-697a-4c8d-a53a-04f32de91706.png)
+When you've connected your GitHub account to [Heroku](https://www.heroku.com) , you will see this page.
 
-Fork this repository
+![Screen Shot 2564-11-13 at 11 32 40 AM](https://user-images.githubusercontent.com/46888825/141605725-906925eb-3c94-45b0-9ebd-d6eb03e58ef1.png)
+
+Fork [this repository](https://github.com/Unstable0/HttpProxyService) (https://github.com/Unstable0/HttpProxyService)
 
 ![Screen Shot 2564-11-13 at 11 28 09 AM](https://user-images.githubusercontent.com/46888825/141605640-e14a4f1a-8c2e-45aa-9825-a3187b737c4c.png)
 
-Coming soon
+After you forked this repository, go back to [Heroku](https://www.heroku.com) and search `HttpProxyService` then click `Connect`
+
+![Screen Shot 2564-11-13 at 11 34 12 AM](https://user-images.githubusercontent.com/46888825/141605767-d2a79d37-27bb-428c-99cb-1d25de00a8b9.png)
+
+Now click `Deploy` and wait until [Heroku](https://www.heroku.com) finish deploying your app
+
+![Screen Shot 2564-11-13 at 11 40 00 AM](https://user-images.githubusercontent.com/46888825/141605863-0113ff48-bb8a-483d-8682-85101f24d12c.png)
+
+After your app is deployed, click on `View`.
+
+![Screen Shot 2564-11-13 at 11 40 29 AM](https://user-images.githubusercontent.com/46888825/141605871-7de372aa-ba97-49d6-b1bf-aa9c4683c80a.png)
+
+Copy your app URL, you will need this later.
+
+![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605911-96640522-1ed9-44f7-b05b-46802dda519d.png)
 
 **Fast Method**
 
@@ -55,7 +74,7 @@ After your app is deployed, click on `View`.
 
 Copy your app URL, you will need this later.
 
-![Screen Shot 2564-11-12 at 4 42 55 PM](https://user-images.githubusercontent.com/46888825/141446066-a85ede90-53ad-4a49-a5c6-c4020c7dd86d.png)
+![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605979-11a0774b-11fc-481d-adfa-40d094a11682.png)
 
 # Game Setup
 
@@ -71,9 +90,9 @@ Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 ![Screen Shot 2564-11-12 at 4 42 55 PM](https://user-images.githubusercontent.com/46888825/141448105-74b27588-4bc9-4e68-866c-75a840473da8.png)
 
-Example: My app URL is `https://aaaaaaad23.herokuapp.com` so my code will look like this
+For example, my app URL is `https://example-app-0109.herokuapp.com` so the code will look like this
 
-![Screen Shot 2564-11-12 at 4 59 51 PM](https://user-images.githubusercontent.com/46888825/141448477-264ea2ab-316e-4f16-9ac3-f700ebd334d4.png)
+![Screen Shot 2564-11-13 at 11 46 45 AM](https://user-images.githubusercontent.com/46888825/141605997-295663fe-2b01-47da-9754-a873b89ff07f.png)
 
 (Make sure there is no `/` at the end of your URL)
 
@@ -169,6 +188,14 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 # Updating
 
+**If you installed using recommended method**
+
+
+
+**For fast method **
+
+*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.
+
 - Make sure you have [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed on your computer.
 - If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using Standalone installation method.
 
@@ -203,5 +230,3 @@ If you get `IP address mismatch` error, press Control + C on your command line a
 Type in your email and password.
 
 When you're logged in, follow [this](https://youtube.com) tutorial.
-
-*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.
