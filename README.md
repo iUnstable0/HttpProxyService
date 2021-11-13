@@ -196,7 +196,7 @@ print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Cate
 | nocache | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request stores (cache) the response | false |
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 
-**Example**
+**Examples**
 
 Search roblox catalog with the keyword `Pants` and print the results
 
@@ -215,6 +215,20 @@ for Index, Asset in pairs(Data.data) do
 end
 ```
 
+Get the friend count for current the current logged in user
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+
+local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+	user = "admin"
+}) --> { count: number_of_friends }
+
+print(Data.count) --> 4
+```
+
+See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
+
 # HttpProxyService:PostAsync
 
 **Parameters**
@@ -227,7 +241,7 @@ end
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 | content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
 
-**Example**
+**Examples**
 
 Send a `Hello world!` message using discord webhook
 
@@ -238,6 +252,20 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 	content = "Hello World!"
 })
 ```
+
+Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) on the current logged in user
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+
+HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+	user = "admin"
+})
+```
+
+*Notes: If the code above output error 409, it means the gear is already favorited.*
+
+See https://catalog.roblox.com/docs#!/Favorites/post_v1_favorites_users_userId_assets_assetId_favorite
 
 # Updating
 
