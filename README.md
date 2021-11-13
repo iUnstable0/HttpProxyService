@@ -56,12 +56,8 @@ print(HttpProxyService:GetAsync(HttpProxyService:FormatParams("https://catalog.r
 	Category = 3
 })))
 
-HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", {
-	Body = {
-		Data = {
-			content = "Hello world!"
-		}
-	}
+HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
+	content = "Hello World!"
 })
 ```
 
@@ -79,12 +75,12 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-local Data = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
+local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
 	Category = 3,
 	Keyword = "Pants"
 })
 
-print(Data) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
+print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
 # HttpProxyService:GetAsync
