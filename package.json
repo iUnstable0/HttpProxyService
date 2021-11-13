@@ -15,10 +15,9 @@
     "url": "git+https://github.com/Unstable0/Roblox-Proxy.git"
   },
   "keywords": [
-    "roblox-proxy",
-    "proxy",
     "roblox-api",
-    "roblox-apis"
+    "roblox-proxy",
+    "roblox-http-proxy"
   ],
   "author": "Unstable0",
   "license": "MIT",
