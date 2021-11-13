@@ -71,9 +71,9 @@ app.get("/get", async (request, response) => {
 
     var newHeaders = {};
 
-    if ("current_user" in request.headers) {
-        if (request.headers.current_user in users) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.headers.current_user]
+    if ("currentuser" in request.headers) {
+        if (request.headers.currentuser in users) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
@@ -138,9 +138,9 @@ app.post("/post", async (request, response) => {
 
     var newHeaders = {};
 
-    if ("current_user" in request.body.Headers) {
-        if (request.body.Headers.current_user in users) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.body.Headers.current_user]
+    if ("currentuser" in request.body.Headers) {
+        if (request.body.Headers.currentuser in users) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.body.Headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
