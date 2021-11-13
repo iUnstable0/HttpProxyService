@@ -2,7 +2,7 @@
 
 Send HTTP requests to Roblox APIs or Discord Webhooks in-game
 
-# Recommended Setup
+# Recommended Setup Method
 
 You will need a [Heroku](https://www.heroku.com) and [GitHub](https://www.github.com) account.
 
@@ -54,7 +54,7 @@ Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605911-96640522-1ed9-44f7-b05b-46802dda519d.png)
 
-# Fast Setup (Not Recommended)
+# Fast Setup Method (Not Recommended)
 
 *Notes: You will have to delete your app and re-deploy to update the code if you are using this method, I recommend using the recommended method.*
 
