@@ -221,13 +221,13 @@ Scroll down and click `Deploy Branch` to update.
 
 ![Screen Shot 2564-11-13 at 11 57 54 AM](https://user-images.githubusercontent.com/46888825/141606231-64dd3446-f570-4a8e-b190-2f444e3cf2fe.png)
 
-*Notes: You can enable automatic deploy so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard
+*Notes: You can enable automatic deploy so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard*
 
 ![Screen Shot 2564-11-13 at 11 58 26 AM](https://user-images.githubusercontent.com/46888825/141606245-27017421-970e-4676-be08-8e573a45f47e.png)
 
 **For fast method **
 
-*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.
+*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.*
 
 - Make sure you have [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed on your computer.
 - If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using Standalone installation method.
