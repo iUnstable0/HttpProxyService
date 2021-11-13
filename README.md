@@ -125,7 +125,7 @@ end
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 | content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
 
-**Examples**
+**Example**
 
 Send a `Hello world!` message using discord webhook
 
