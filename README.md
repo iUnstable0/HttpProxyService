@@ -114,7 +114,7 @@ You can also use [this website](https://1password.com/password-generator/) (http
 
 ![Screen Shot 2564-11-13 at 6 39 29 PM](https://user-images.githubusercontent.com/46888825/141642373-17384d2b-c5e5-419c-8c0e-1b927d3f3acb.png)
 
-*Notes: To prevent errors, your password can only contain underscores, letters (A-z), and number.*
+*Notes: Your password can only contain underscores, letters (a-z), and numbers to prevent problems.*
 
 Head over to `Deploy`
 
