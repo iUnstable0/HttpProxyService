@@ -38,8 +38,6 @@ app.post("/post", (request, response) => {
         });
     };
 
-    console.log(request.body)
-
     axios.post(request.query.url, request.body.Data, {
         headers: request.body.Headers
     })
@@ -56,6 +54,18 @@ app.post("/post", (request, response) => {
                 error: error
             });
         });
+});
+
+app.delete("/delete", (request, response) => {
+    if (!request.query.url) {
+        return response.json({
+            error: {
+                message: "No URL Provided."
+            }
+        });
+    };
+
+    axios.delete(request.query.url,)
 });
 
 app.listen(process.env.PORT || 80, () => {
