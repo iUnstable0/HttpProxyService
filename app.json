@@ -1,6 +1,6 @@
 {
   "name": "HttpProxyService",
-  "description": "Roblox Proxy.",
+  "description": "Send HTTP requests to Roblox APIs or Discord Webhooks in-game.",
   "repository": "https://github.com/Unstable0/HttpProxyService",
   "logo": "",
   "keywords": ["roblox-api", "roblox-proxy", "roblox-http-proxy"]
