@@ -2,9 +2,7 @@
 
 Send HTTP requests to Roblox APIs or Discord Webhooks in-game
 
-# Setup
-
-**Recommended Method**
+# Recommended Setup
 
 You will need a [Heroku](https://www.heroku.com) and [GitHub](https://www.github.com) account.
 
@@ -56,7 +54,9 @@ Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605911-96640522-1ed9-44f7-b05b-46802dda519d.png)
 
-**Fast Method (Not recommended)**
+# Fast Setup (Not Recommended)
+
+*Notes: You will have to delete your app and re-deploy to update the code if you are using this method, I recommend using the recommended method.*
 
 After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService) or click the button below.
 
@@ -75,6 +75,47 @@ After your app is deployed, click on `View`.
 Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605979-11a0774b-11fc-481d-adfa-40d094a11682.png)
+
+# Environment Variables Setup
+
+Click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to your [Heroku](https://www.heroku.com) account [dashboard](https://dashboard.heroku.com/apps)
+
+Click on your app
+
+![Screen Shot 2564-11-13 at 11 56 30 AM](https://user-images.githubusercontent.com/46888825/141606204-42a6f873-99a3-466b-9f4c-b585c56d3f6a.png)
+
+Click `Settings`
+
+![Screen Shot 2564-11-13 at 6 17 06 PM](https://user-images.githubusercontent.com/46888825/141636176-b8add2da-23dd-48c6-8bab-c7813b207465.png)
+
+Click `Reveal Config Vars`
+![Screen Shot 2564-11-13 at 6 18 11 PM](https://user-images.githubusercontent.com/46888825/141636578-1c56cfcb-a0fa-4dc2-835b-79f12155f696.png)
+
+Type `admin` in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
+
+![Screen Shot 2564-11-13 at 6 26 16 PM](https://user-images.githubusercontent.com/46888825/141641856-f90e2fa1-3972-4537-a993-e64652e48730.png)
+
+![Screen Shot 2564-11-13 at 6 26 57 PM](https://user-images.githubusercontent.com/46888825/141642049-9a508142-16c7-468d-aeda-766e38a5fa8f.png)
+
+*Notes: You need to put your full cookie including the _|WARNING*
+
+Then click `Add`
+
+![Screen Shot 2564-11-13 at 6 27 42 PM](https://user-images.githubusercontent.com/46888825/141642095-79791ad6-f6b3-412d-9e0e-c51a2c70cc8b.png)
+
+After you added, it will look like this.
+
+![Screen Shot 2564-11-13 at 6 28 14 PM](https://user-images.githubusercontent.com/46888825/141642106-5e045ea2-9428-47e1-bde1-08937b47a3c9.png)
+
+Now head over to `Deploy`
+
+![Screen Shot 2564-11-13 at 6 28 43 PM](https://user-images.githubusercontent.com/46888825/141642127-3066c38b-031a-489c-a7c0-599c2b8ea464.png)
+
+Scroll down and click `Deploy Branch`
+
+![Screen Shot 2564-11-13 at 6 29 28 PM](https://user-images.githubusercontent.com/46888825/141642143-5143e42c-8ffd-49ad-888e-17d1375d3082.png)
+
+*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.*
 
 # Game Setup
 
@@ -97,18 +138,6 @@ For example, my app URL is `https://example-app-0109.herokuapp.com` so the code 
 (Make sure there is no `/` at the end of your URL)
 
 # Usage
-
-```lua
-local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
-
-print(HttpProxyService:GetAsync(HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
-	Category = 3
-})))
-
-HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
-	content = "Hello World!"
-})
-```
 
 # HttpProxyService:FormatParams
 
