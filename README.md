@@ -52,7 +52,9 @@ Example: My app URL is `https://aaaaaaad23.herokuapp.com` so my code will look l
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-print(HttpProxyService:GetAsync("https://catalog.roblox.com/v1/search/items/details?Category=3"))
+print(HttpProxyService:GetAsync(HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
+	Category = 3
+})))
 
 HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", {
 	Body = {
@@ -61,6 +63,28 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 		}
 	}
 })
+```
+
+# HttpProxyService:FormatParams
+
+**Parameters**
+
+| Name | Type | Default |
+| ------------- | ------------- | ------------- |
+| url | [string](https://developer.roblox.com/en-us/articles/String) |  |
+| params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} |
+
+**Examples**
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+
+local Data = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
+	Category = 3,
+	Keyword = "Pants"
+})
+
+print(Data) > https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
 # HttpProxyService:GetAsync
@@ -76,9 +100,9 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 ```lua
 {
-    NoCache = true, --true = Stores (cache) the response, false = Doesn't stores (cache) the response. Default = true
-    Headers = {}, --Send a header. Default = nil.
-    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
+	NoCache = true, --true = Stores (cache) the response, false = Doesn't stores (cache) the response. Default = true
+	Headers = {}, --Send a header. Default = nil.
+	Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
 }
 ```
 
@@ -89,10 +113,13 @@ Search roblox catalog with the keyword `Pants` and print the results
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
-local Data = HttpProxyService:GetAsync("https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants")
+local Data = HttpProxyService:GetAsync(HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
+	Category = 3,
+	Keyword = "Pants"
+}))
 
-for Index, Asset in pairs(Data) do
-    print(Asset.name)
+for Index, Asset in pairs(Data.data) do
+	print(Asset.name)
 end
 ```
 
@@ -109,9 +136,9 @@ end
 
 ```lua
 {
-    Body = {}, --Send a body. Default = {} (Empty body)
-    Content_Type = "ApplicationJson", --Default = ApplicationJson
-    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
+	    Body = {}, --Send a body. Default = {} (Empty body)
+	    Content_Type = "ApplicationJson", --Default = ApplicationJson
+	    Decode = true --true = returns a decoded data, false = returns a undecoded data. Default = true
 }
 ```
 
@@ -119,8 +146,8 @@ end
 
 ```lua
 {
-    Data = {}, --Send a data. Default = nil (No data)
-    Headers = {} --Send a headers. Default = nil (No headers)
+	    Data = {}, --Send a data. Default = nil (No data)
+	    Headers = {} --Send a headers. Default = nil (No headers)
 }
 ```
 
