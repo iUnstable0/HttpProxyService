@@ -88,7 +88,7 @@ Go to line 5 where it says `local Url = ""`
 
 Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
-![Screen Shot 2564-11-12 at 4 42 55 PM](https://user-images.githubusercontent.com/46888825/141448105-74b27588-4bc9-4e68-866c-75a840473da8.png)
+![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141606335-452e3f12-0f8d-4bbb-8c5b-630079a03bac.png)
 
 For example, my app URL is `https://example-app-0109.herokuapp.com` so the code will look like this
 
