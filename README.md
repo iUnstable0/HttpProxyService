@@ -115,13 +115,17 @@ You can also use [this website](https://1password.com/password-generator/) (http
 
 Head over to `Deploy`
 
-![Screen Shot 2564-11-13 at 6 28 43 PM](https://user-images.githubusercontent.com/46888825/141642127-3066c38b-031a-489c-a7c0-599c2b8ea464.png)
+![Screen Shot 2564-11-13 at 6 45 56 PM](https://user-images.githubusercontent.com/46888825/141642558-89f4920b-abe1-4ccc-965d-79a937f7ae49.png)
 
 Scroll down and click `Deploy Branch`
 
 ![Screen Shot 2564-11-13 at 6 29 28 PM](https://user-images.githubusercontent.com/46888825/141642143-5143e42c-8ffd-49ad-888e-17d1375d3082.png)
 
-*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.*
+Now wait until [Heroku](https://www.heroku.com) finishes deploying your app.
+
+*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.
+
+Everytime you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
 
 # Game Setup
 
@@ -142,6 +146,18 @@ For example, my app URL is `https://example-app-0109.herokuapp.com` so the code 
 ![Screen Shot 2564-11-13 at 11 46 45 AM](https://user-images.githubusercontent.com/46888825/141605997-295663fe-2b01-47da-9754-a873b89ff07f.png)
 
 (Make sure there is no `/` at the end of your URL)
+
+Go to line 6 where it says `local Password = ""`
+
+![Screen Shot 2564-11-13 at 6 48 07 PM](https://user-images.githubusercontent.com/46888825/141642598-6493721c-4dda-41c5-abfb-1e5a8f9c024e.png)
+
+Type in your app password that you added earlier on the Config Vars
+
+![Screen Shot 2564-11-13 at 6 49 36 PM](https://user-images.githubusercontent.com/46888825/141642632-1b486bb9-ec8b-40e2-91cf-ff0c93e9ddbf.png)
+
+For example, my app password is `examplepassword` so the code will look like this
+
+![Screen Shot 2564-11-13 at 6 49 13 PM](https://user-images.githubusercontent.com/46888825/141642621-7d6f7790-760c-4e9e-9197-268c6c79c0de.png)
 
 # Usage
 
