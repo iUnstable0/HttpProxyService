@@ -107,7 +107,11 @@ After you added, it will look like this.
 
 ![Screen Shot 2564-11-13 at 6 28 14 PM](https://user-images.githubusercontent.com/46888825/141642106-5e045ea2-9428-47e1-bde1-08937b47a3c9.png)
 
-Now head over to `Deploy`
+Now follow the same steps but type in `password` in the `Key` box and type in any password you like in the `Value` box (This password will be used to protect your app from unauthorized access)
+
+![Screen Shot 2564-11-13 at 6 39 29 PM](https://user-images.githubusercontent.com/46888825/141642373-17384d2b-c5e5-419c-8c0e-1b927d3f3acb.png)
+
+Head over to `Deploy`
 
 ![Screen Shot 2564-11-13 at 6 28 43 PM](https://user-images.githubusercontent.com/46888825/141642127-3066c38b-031a-489c-a7c0-599c2b8ea464.png)
 
