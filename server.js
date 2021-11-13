@@ -56,17 +56,17 @@ app.post("/post", (request, response) => {
         });
 });
 
-app.delete("/delete", (request, response) => {
-    if (!request.query.url) {
-        return response.json({
-            error: {
-                message: "No URL Provided."
-            }
-        });
-    };
+// app.delete("/delete", (request, response) => {
+//     if (!request.query.url) {
+//         return response.json({
+//             error: {
+//                 message: "No URL Provided."
+//             }
+//         });
+//     };
 
-    axios.delete(request.query.url,)
-});
+//     axios.delete(request.query.url)
+// });
 
 app.listen(process.env.PORT || 80, () => {
     console.log(`Listening on port ${process.env.PORT || 80}`)
