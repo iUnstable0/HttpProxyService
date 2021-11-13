@@ -126,9 +126,9 @@ Scroll down and click `Deploy Branch`
 
 Now wait until [Heroku](https://www.heroku.com) finishes deploying your app.
 
-*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.
+*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.*
 
-Everytime you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
+*Everytime you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
 
 # Game Setup
 
