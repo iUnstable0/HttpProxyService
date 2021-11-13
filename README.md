@@ -24,7 +24,8 @@ Choose your app name, regoin and then click `Create app`
 
 Click on GitHub and click `Connect to GitHub`
 
-![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605486-2763b76c-6852-4ed4-8f22-875bd7a590b1.png)
+![Screen Shot 2564-11-13 at 11 21 58 AM](https://user-images.githubusercontent.com/46888825/141647663-c79566f9-4cbd-4c1d-b02e-ac1274e92674.png)
+![Screen Shot 2564-11-13 at 11 23 03 AM](https://user-images.githubusercontent.com/46888825/141647665-9a97aba5-fabe-4fd4-9825-005239933f2a.png)
 
 Click `Authorize heroku` (You have to login into [Github](https://github.com) first)
 
