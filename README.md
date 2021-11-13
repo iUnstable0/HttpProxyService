@@ -56,7 +56,7 @@ Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605911-96640522-1ed9-44f7-b05b-46802dda519d.png)
 
-**Fast Method**
+**Fast Method (Not recommended)**
 
 After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService) or click the button below.
 
@@ -190,7 +190,40 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 **If you installed using recommended method**
 
+Open [GitHub](https://github.com) (https://github.com)
+![Screen Shot 2564-11-13 at 11 52 07 AM](https://user-images.githubusercontent.com/46888825/141606102-5a1dc4a4-040c-4d2a-8918-85e219aea1e0.png)
 
+Click on your repository
+
+![Screen Shot 2564-11-13 at 11 52 30 AM](https://user-images.githubusercontent.com/46888825/141606111-62177bb7-d252-40c3-9193-da3391100df9.png)
+
+If it says `This branch is x commits behind Unstable0:main`, it means there is an update.
+
+![Screen Shot 2564-11-13 at 11 53 25 AM](https://user-images.githubusercontent.com/46888825/141606127-0e3b1328-3062-4e95-b88d-f1890805d147.png)
+
+Tp update, click on `Fetch Upstream` and click `Fetch and merge`
+
+![Screen Shot 2564-11-13 at 11 54 19 AM](https://user-images.githubusercontent.com/46888825/141606153-7cf7284d-5c55-42ae-802a-8e5e66b6bd25.png)
+
+![Screen Shot 2564-11-13 at 11 55 00 AM](https://user-images.githubusercontent.com/46888825/141606161-0bee1aa4-5075-470d-9387-5e3ec63c48bb.png)
+
+After you fetched the latest version, click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to your [Heroku](https://www.heroku.com) account [dashboard](https://dashboard.heroku.com/apps)
+
+Click on your app
+
+![Screen Shot 2564-11-13 at 11 56 30 AM](https://user-images.githubusercontent.com/46888825/141606204-42a6f873-99a3-466b-9f4c-b585c56d3f6a.png)
+
+Click `Deploy`
+
+![Screen Shot 2564-11-13 at 11 57 19 AM](https://user-images.githubusercontent.com/46888825/141606219-c33bf599-3c8b-479c-ae5a-6ec9a11ccd01.png)
+
+Scroll down and click `Deploy Branch` to update.
+
+![Screen Shot 2564-11-13 at 11 57 54 AM](https://user-images.githubusercontent.com/46888825/141606231-64dd3446-f570-4a8e-b190-2f444e3cf2fe.png)
+
+*Notes: You can enable automatic deploy so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard
+
+![Screen Shot 2564-11-13 at 11 58 26 AM](https://user-images.githubusercontent.com/46888825/141606245-27017421-970e-4676-be08-8e573a45f47e.png)
 
 **For fast method **
 
