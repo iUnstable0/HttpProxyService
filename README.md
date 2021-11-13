@@ -307,7 +307,7 @@ Scroll down and click `Deploy Branch` to update.
 
 ![Screen Shot 2564-11-13 at 11 58 26 AM](https://user-images.githubusercontent.com/46888825/141606245-27017421-970e-4676-be08-8e573a45f47e.png)
 
-**For fast method **
+**For fast method**
 
 *Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.*
 
