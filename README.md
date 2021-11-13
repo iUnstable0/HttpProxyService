@@ -221,7 +221,7 @@ Get the friend count for current the current logged in user
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
 local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
-	user = "admin"
+	current_user = "admin"
 }) --> { count: number_of_friends }
 
 print(Data.count) --> 4
@@ -259,7 +259,7 @@ Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Bod
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
 HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
-	user = "admin"
+	current_user = "admin"
 })
 ```
 
