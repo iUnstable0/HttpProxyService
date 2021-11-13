@@ -9,6 +9,36 @@ You will need a [Heroku](https://www.heroku.com) account.
 - Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com) for free
 - Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account.
 
+**Recommended Method**
+
+After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to the [dashboard](https://dashboard.heroku.com/apps)
+
+On the top right, click `New` and click `Create new app`
+
+![Screen Shot 2564-11-13 at 11 17 14 AM](https://user-images.githubusercontent.com/46888825/141605439-e2b27ddd-d9a9-44fb-96dd-27b67001fbb7.png)
+
+Choose your app name, regoin and then click `Create app`
+
+![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605458-fc0f6758-38fd-4534-9f34-f04f899f281c.png)
+
+Click on GitHub
+
+![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605486-2763b76c-6852-4ed4-8f22-875bd7a590b1.png)
+
+Click `Connect to GitHub`
+
+When you've connected your GitHub account to [Heroku](https://www.heroku.com) , you will see this screen.
+
+![Screen Shot 2564-11-13 at 11 24 34 AM](https://user-images.githubusercontent.com/46888825/141605550-4b4bd3fa-697a-4c8d-a53a-04f32de91706.png)
+
+Fork this repository
+
+![Screen Shot 2564-11-13 at 11 28 09 AM](https://user-images.githubusercontent.com/46888825/141605640-e14a4f1a-8c2e-45aa-9825-a3187b737c4c.png)
+
+Coming soon
+
+**Fast Method**
+
 After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService) or click the button below.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService)
@@ -33,7 +63,7 @@ Create a new [ModuleScript](https://developer.roblox.com/en-us/api-reference/cla
 
 Replace the code inside your [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) with this [code](https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua) (https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua)
 
-On line 5
+Go to line 5 where it says `local Url = ""`
 
 ![Screen Shot 2564-11-12 at 4 56 37 PM](https://user-images.githubusercontent.com/46888825/141448026-e9bb49d6-187d-4f01-9c02-6633339e38ab.png)
 
