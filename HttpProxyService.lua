@@ -2,7 +2,7 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
+local Url = "https://httpproxyservice.herokuapp.com" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
 
 function GetUrl(Method, Link)
 	return Url .. Method .. "?url=" .. HttpService:UrlEncode(Link)
@@ -22,7 +22,7 @@ function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
 	local DecodedData = HttpService:JSONDecode(Data)
 
 	if DecodedData.error then
-		error(Data)
+		error(DecodedData.error.message)
 	end
 
 	if Decode == nil or Decode then
@@ -50,7 +50,7 @@ function HttpProxyService:PostAsync(Link, Decode, Data, Headers, Content_Type)
 	local DecodedData = HttpService:JSONDecode(Data)
 
 	if DecodedData.error then
-		error(Data)
+		error(DecodedData.error.message)
 	end
 
 	if Decode == nil or Decode then
