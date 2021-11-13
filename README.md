@@ -65,12 +65,12 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 **Parameters**
 
-| Name | Type | Default |
-| ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  |
-| params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} |
+| Name | Type | Default | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| url | [string](https://developer.roblox.com/en-us/articles/String) |  | true |
+| params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | false |
 
-**Examples**
+**Example**
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
