@@ -8,7 +8,9 @@ app.use(express.json());
 app.get("/get", (request, response) => {
     if (!request.query.url) {
         return response.json({
-            error: "No URL provided"
+            error: {
+                message: "No URL Provided."
+            }
         });
     };
 
@@ -30,9 +32,13 @@ app.get("/get", (request, response) => {
 app.post("/post", (request, response) => {
     if (!request.query.url) {
         return response.json({
-            error: "No URL provided"
+            error: {
+                message: "No URL Provided."
+            }
         });
     };
+
+    console.log(request.body)
 
     axios.post(request.query.url, request.body.Data, {
         headers: request.body.Headers
