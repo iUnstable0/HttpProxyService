@@ -113,6 +113,8 @@ You can also use [this website](https://1password.com/password-generator/) (http
 
 ![Screen Shot 2564-11-13 at 6 39 29 PM](https://user-images.githubusercontent.com/46888825/141642373-17384d2b-c5e5-419c-8c0e-1b927d3f3acb.png)
 
+*Notes: To prevent errors, your password can only contain underscores, letters (A-z), and number.*
+
 Head over to `Deploy`
 
 ![Screen Shot 2564-11-13 at 6 45 56 PM](https://user-images.githubusercontent.com/46888825/141642558-89f4920b-abe1-4ccc-965d-79a937f7ae49.png)
