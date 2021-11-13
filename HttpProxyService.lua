@@ -65,6 +65,10 @@ function HttpProxyService:PostAsync(Link, Options)
 end
 
 function HttpProxyService:FormatParams(Link, Params)
+	if Params == nil then
+		Params = {}
+	end
+	
 	local First = true
 
 	for Key, Value in pairs(Params) do
