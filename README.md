@@ -109,6 +109,8 @@ After you added, it will look like this.
 
 Now follow the same steps but type in `password` in the `Key` box and type in any password you like in the `Value` box (This password will be used to protect your app from unauthorized access)
 
+You can also use [this website](https://1password.com/password-generator/) (https://1password.com/password-generator/) to generate secure passwords.
+
 ![Screen Shot 2564-11-13 at 6 39 29 PM](https://user-images.githubusercontent.com/46888825/141642373-17384d2b-c5e5-419c-8c0e-1b927d3f3acb.png)
 
 Head over to `Deploy`
