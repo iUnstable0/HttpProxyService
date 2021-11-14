@@ -39,6 +39,28 @@ async function getToken(cookie, newToken) {
     };
 };
 
+function handleError(error, response) {
+    if ("errors" in error.response.data) {
+        if (error.response.data.errors[0] !== null) {
+            return response.json({
+                error: {
+                    message: error.response.data.errors[0].message
+                }
+            });
+        };
+    } else if ("message" in error.response.data) {
+        return response.json({
+            error: {
+                message: error.response.data.message
+            }
+        });
+    };
+
+    response.json({
+        error: error
+    });
+};
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -87,6 +109,7 @@ app.get("/get", async (request, response) => {
             response.json(response2.data);
         })
         .catch(async function (error) {
+            console.log(error);
             if (error.status === 403) {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
@@ -97,14 +120,10 @@ app.get("/get", async (request, response) => {
                         response.json(response2.data);
                     })
                     .catch(function (error) {
-                        response.json({
-                            error: error
-                        });
+                        handleError(error, response);
                     });
             } else {
-                response.json({
-                    error: error
-                });
+                handleError(error, response);
             };
         });
 });
@@ -154,6 +173,7 @@ app.post("/post", async (request, response) => {
             response.json(response2.data);
         })
         .catch(async function (error) {
+            console.log(error)
             if (error.response.status === 403) {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
@@ -164,14 +184,10 @@ app.post("/post", async (request, response) => {
                         response.json(response2.data);
                     })
                     .catch(function (error) {
-                        response.json({
-                            error: error
-                        });
+                        handleError(error, response);
                     });
             } else {
-                response.json({
-                    error: error
-                });
+                handleError(error, response);
             };
         });
 });
