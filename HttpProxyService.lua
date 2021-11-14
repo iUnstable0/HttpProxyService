@@ -31,6 +31,8 @@ function HttpProxyService:New(Password)
 
 		if DecodedData.error then
 			warn(DecodedData.error.message)
+			
+			return nil
 		end
 
 		if Decode == nil or Decode then
@@ -64,6 +66,8 @@ function HttpProxyService:New(Password)
 
 		if DecodedData.error then
 			warn(DecodedData.error.message)
+			
+			return nil
 		end
 
 		if Decode == nil or Decode then
