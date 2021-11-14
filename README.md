@@ -364,11 +364,11 @@ After you've enabled it, reinstall Heroku again but on `Terminal with Rosetta`.
 
 Open `Terminal` or `Command Prompt` (Open `Terminal with Rosetta` for Macs with Apple chip)
 
-Type this on your command line `Heroku login` then press `Enter`.
+Type this on your command line `heroku login` then press `Enter`.
 
 Follow the instructions on your screen.
 
-If you get an `IP address mismatch` error, press Control + C on your command line and type `Heroku login -i`, then press `Enter` again.
+If you get an `IP address mismatch` error, press Control + C on your command line and type `heroku login -i`, then press `Enter` again.
 
 Type in your email and password.
 
