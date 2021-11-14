@@ -214,7 +214,7 @@ end
 
 Get the friend count for `User1`
 
-![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663333-24905084-6fc8-4ced-947b-aa4926bfa8b0.png)
+![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663409-00d0f9ee-48fc-4a64-a30f-cb5939eb948a.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
@@ -228,7 +228,7 @@ print(Data.count) --> 4 (Number of friends request on the first user)
 
 Get the friend count for `User2`
 
-![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663353-728c98be-67e7-493d-973d-5f5a202cec93.png)
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663414-35492743-d1bc-4529-9ca3-939fe0274d09.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
@@ -268,7 +268,7 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 
 Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User1` credentials
 
-![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663333-24905084-6fc8-4ced-947b-aa4926bfa8b0.png)
+![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663409-00d0f9ee-48fc-4a64-a30f-cb5939eb948a.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
@@ -280,7 +280,7 @@ HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/229343
 
 Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User2` credentials
 
-![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663353-728c98be-67e7-493d-973d-5f5a202cec93.png)
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663414-35492743-d1bc-4529-9ca3-939fe0274d09.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
