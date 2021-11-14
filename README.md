@@ -157,7 +157,7 @@ Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 | url | [string](https://developer.roblox.com/en-us/articles/String) |  | true |
 | params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | false |
 
-**Returns** [formatted url](https://developer.roblox.com/en-us/articles/String)
+**Returns** [Formatted URL](https://developer.roblox.com/en-us/articles/String)
 
 **Example**
 
@@ -203,7 +203,7 @@ print(Data)
 | decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | Used to specify some HTTP request headers | false |
 
-**Returns** response body
+**Returns** Response Body
 
 **Examples**
 
@@ -271,7 +271,7 @@ See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | Used to specify some HTTP request headers | false |
 | content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
 
-**Returns** result
+**Returns** Result
 
 **Examples**
 
