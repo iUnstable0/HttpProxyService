@@ -3,6 +3,8 @@ const axios = require("axios").default;
 const express = require("express");
 const app = express();
 
+const disallowedHeaders = ["host", "accept", "accept-encoding", "cache-control", "connection", "user-agent", "roblox-id", "currentuser"];
+
 const tokens = {};
 
 async function getNewToken(cookie) {
@@ -64,7 +66,7 @@ function handleError(error, response) {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/get", async (request, response) => {
+app.post("/get", async (request, response) => {
     if (!request.query.url) {
         return response.json({
             error: {
@@ -89,9 +91,9 @@ app.get("/get", async (request, response) => {
 
     var newHeaders = {};
 
-    if ("currentuser" in request.headers) {
-        if (request.headers.currentuser in process.env) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.headers.currentuser]
+    if ("currentuser" in request.body) {
+        if (request.body.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.body.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
@@ -99,6 +101,12 @@ app.get("/get", async (request, response) => {
                     message: "Invalid user."
                 }
             });
+        };
+    };
+
+    for (const [header, value] of Object.entries(request.body)) {
+        if (!disallowedHeaders.includes(header)) {
+            newHeaders[header] = value;
         };
     };
 
@@ -165,6 +173,12 @@ app.post("/post", async (request, response) => {
         };
     };
 
+    for (const [header, value] of Object.entries(request.body.Headers)) {
+        if (!disallowedHeaders.includes(header)) {
+            newHeaders[header] = value;
+        };
+    };
+
     axios.post(request.query.url, request.body.Data, {
         headers: newHeaders
     })
@@ -189,18 +203,6 @@ app.post("/post", async (request, response) => {
             };
         });
 });
-
-// app.delete("/delete", (request, response) => {
-//     if (!request.query.url) {
-//         return response.json({
-//             error: {
-//                 message: "No URL Provided."
-//             }
-//         });
-//     };
-
-//     axios.delete(request.query.url)
-// });
 
 app.listen(process.env.PORT || 80, () => {
     console.log(`Listening on port ${process.env.PORT || 80}`);
