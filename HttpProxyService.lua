@@ -3,9 +3,8 @@ local HttpProxyService = {}
 local HttpService = game:GetService("HttpService")
 
 local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
-local Password = "" -- Your password here (Not your ROBLOX account password, your Heroku app password)
 
-function GetUrl(Method, Link)
+function GetUrl(Method, Link, Password)
 	return HttpProxyService:FormatParams(Url .. Method, {
 		password = Password,
 		url = HttpService:UrlEncode(Link)
@@ -20,52 +19,58 @@ function IsTable(Object)
 	end
 end
 
-function HttpProxyService:GetAsync(Link, Decode, NoCache, Headers)
-	Link = GetUrl("/get", Link)
+function HttpProxyService:New(Password)
+	local Functions = {}
 	
-	local Data = HttpService:GetAsync(Link, NoCache or true, Headers or nil)
+	function Functions:GetAsync(Link, Decode, NoCache, Headers)
+		Link = GetUrl("/get", Link, Password)
 
-	local DecodedData = HttpService:JSONDecode(Data)
+		local Data = HttpService:GetAsync(Link, NoCache or true, Headers or nil)
 
-	if DecodedData.error then
-		warn(DecodedData.error.message)
+		local DecodedData = HttpService:JSONDecode(Data)
+
+		if DecodedData.error then
+			warn(DecodedData.error.message)
+		end
+
+		if Decode == nil or Decode then
+			return DecodedData
+		else
+			return Data
+		end
 	end
 
-	if Decode == nil or Decode then
-		return DecodedData
-	else
-		return Data
-	end
-end
+	function Functions:PostAsync(Link, Decode, Data, Headers, Content_Type)
+		Link = GetUrl("/post", Link, Password)
 
-function HttpProxyService:PostAsync(Link, Decode, Data, Headers, Content_Type)
-	Link = GetUrl("/post", Link)
-	
-	local Body = {}
-	
-	if Data ~= nil then
-		Body.Data = Data
-	end
-	
-	if Headers ~= nil then
-		Body.Headers = Headers
-	end
-	
-	Body = HttpService:JSONEncode(Body)
-	
-	local Data = HttpService:PostAsync(Link, Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
+		local Body = {}
 
-	local DecodedData = HttpService:JSONDecode(Data)
+		if Data ~= nil then
+			Body.Data = Data
+		end
 
-	if DecodedData.error then
-		warn(DecodedData.error.message)
-	end
+		if Headers ~= nil then
+			Body.Headers = Headers
+		end
 
-	if Decode == nil or Decode then
-		return DecodedData
-	else
-		return Data
+		Body = HttpService:JSONEncode(Body)
+
+		local Data = HttpService:PostAsync(Link, Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
+
+		local DecodedData = HttpService:JSONDecode(Data)
+
+		if DecodedData.error then
+			warn(DecodedData.error.message)
+		end
+
+		if Decode == nil or Decode then
+			return DecodedData
+		else
+			return Data
+		end
 	end
+	
+	return Functions
 end
 
 function HttpProxyService:FormatParams(Link, Params)
