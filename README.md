@@ -201,7 +201,6 @@ print(Data)
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | url | [string](https://developer.roblox.com/en-us/articles/String) |  | The web address you are requesting data from | true |
 | decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
-| nocache | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request stores (cache) the response | false |
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 
 **Returns** response body
@@ -236,7 +235,7 @@ Get the friend count for `User1`
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, {
 	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 }) --> { count: number_of_friends }
 
@@ -251,7 +250,7 @@ Get the friend count for `User2`
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, {
 	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
 }) --> { count: number_of_friends }
 
