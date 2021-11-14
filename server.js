@@ -3,10 +3,6 @@ const axios = require("axios").default;
 const express = require("express");
 const app = express();
 
-const users = {
-    admin: process.env.admin
-};
-
 const tokens = {};
 
 async function getNewToken(cookie) {
@@ -72,8 +68,8 @@ app.get("/get", async (request, response) => {
     var newHeaders = {};
 
     if ("currentuser" in request.headers) {
-        if (request.headers.currentuser in users) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.headers.currentuser]
+        if (request.headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
@@ -139,8 +135,8 @@ app.post("/post", async (request, response) => {
     var newHeaders = {};
 
     if ("currentuser" in request.body.Headers) {
-        if (request.body.Headers.currentuser in users) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + users[request.body.Headers.currentuser]
+        if (request.body.Headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.body.Headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
