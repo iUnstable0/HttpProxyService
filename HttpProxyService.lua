@@ -43,7 +43,10 @@ function HttpProxyService:New(Password)
 	function Functions:PostAsync(Link, Decode, Data, Headers, Content_Type)
 		Link = GetUrl("/post", Link, Password)
 
-		local Body = {}
+		local Body = {
+			Data = {},
+			Headers = {}
+		}
 
 		if Data ~= nil then
 			Body.Data = Data
