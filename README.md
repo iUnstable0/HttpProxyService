@@ -92,33 +92,29 @@ Click `Settings`
 Click `Reveal Config Vars`
 ![Screen Shot 2564-11-13 at 6 18 11 PM](https://user-images.githubusercontent.com/46888825/141636578-1c56cfcb-a0fa-4dc2-835b-79f12155f696.png)
 
-Type `admin` in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
+Type your user in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
 
 ![Screen Shot 2564-11-13 at 6 26 16 PM](https://user-images.githubusercontent.com/46888825/141641856-f90e2fa1-3972-4537-a993-e64652e48730.png)
 
-![Screen Shot 2564-11-13 at 6 26 57 PM](https://user-images.githubusercontent.com/46888825/141642049-9a508142-16c7-468d-aeda-766e38a5fa8f.png)
+![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663252-65c5d983-343c-4dc7-8576-78152a6e0e9a.png)
+
+You can add multiple users.
+
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663257-52946684-7dac-4024-ac38-7073e3b204cb.png)
 
 *Notes: You need to put your full cookie including the _|WARNING*
 
-Then click `Add`
-
-![Screen Shot 2564-11-13 at 6 27 42 PM](https://user-images.githubusercontent.com/46888825/141642095-79791ad6-f6b3-412d-9e0e-c51a2c70cc8b.png)
-
-After you added, it will look like this.
-
-![Screen Shot 2564-11-13 at 6 28 14 PM](https://user-images.githubusercontent.com/46888825/141642106-5e045ea2-9428-47e1-bde1-08937b47a3c9.png)
-
-Now follow the same steps but type in `password` in the `Key` box and type in any password you like in the `Value` box (This password will be used to protect your app from unauthorized access)
+Now follow the same steps but type in `password` in the `Key` box and type type in your password in the `Value` box (This password will be used to lock your app)
 
 You can also use [this website](https://1password.com/password-generator/) (https://1password.com/password-generator/) to generate secure passwords.
 
-![Screen Shot 2564-11-13 at 6 39 29 PM](https://user-images.githubusercontent.com/46888825/141642373-17384d2b-c5e5-419c-8c0e-1b927d3f3acb.png)
+![Screen Shot 2564-11-14 at 7 40 00 AM](https://user-images.githubusercontent.com/46888825/141663293-ba2ae7f4-fe1b-4ea4-9de4-419705d4a67e.png)
 
-*Notes: Your password can only contain underscores, letters (a-z), and numbers to prevent problems.*
+*Notes: Your user and password must contain only underscores, letters (a-z), and numbers to prevent problems.*
 
 Head over to `Deploy`
 
-![Screen Shot 2564-11-13 at 6 45 56 PM](https://user-images.githubusercontent.com/46888825/141642558-89f4920b-abe1-4ccc-965d-79a937f7ae49.png)
+![Screen Shot 2564-11-14 at 7 40 12 AM](https://user-images.githubusercontent.com/46888825/141663279-b7f24fc7-c8fd-4ada-b655-a454a967e907.png)
 
 Scroll down and click `Deploy Branch`
 
@@ -216,16 +212,32 @@ for Index, Asset in pairs(Data.data) do
 end
 ```
 
-Get the friend count for current the current logged in user
+Get the friend count for `User1`
+
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663333-24905084-6fc8-4ced-947b-aa4926bfa8b0.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
 local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
-	currentuser = "admin"
+	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 }) --> { count: number_of_friends }
 
-print(Data.count) --> 4
+print(Data.count) --> 4 (Number of friends request on the first user)
+```
+
+Get the friend count for `User2`
+
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663353-728c98be-67e7-493d-973d-5f5a202cec93.png)
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+
+local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
+}) --> { count: number_of_friends }
+
+print(Data.count) --> 414 (Number of friends request on the second user)
 ```
 
 See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
@@ -254,17 +266,31 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 })
 ```
 
-Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) on the current logged in user
+Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User1` credentials
+
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663333-24905084-6fc8-4ced-947b-aa4926bfa8b0.png)
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 
 HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
-	currentuser = "admin"
+	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 })
 ```
 
-*Notes: If the code above output error 409, it means the gear is already favorited.*
+Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User2` credentials
+
+![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663353-728c98be-67e7-493d-973d-5f5a202cec93.png)
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+
+HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
+})
+```
+
+*Notes: If the code output error 409, it means the gear is already favorited.*
 
 See https://catalog.roblox.com/docs#!/Favorites/post_v1_favorites_users_userId_assets_assetId_favorite
 
