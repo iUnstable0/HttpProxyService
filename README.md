@@ -182,6 +182,8 @@ local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/
 print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
+*If you want to send request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars*
+
 # HttpProxyService:GetAsync
 
 **Parameters**
