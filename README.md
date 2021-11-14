@@ -182,8 +182,6 @@ local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/
 print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
-*If you want to send request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars*
-
 # HttpProxyService:GetAsync
 
 **Parameters**
@@ -213,6 +211,8 @@ for Index, Asset in pairs(Data.data) do
 	print(Asset.name)
 end
 ```
+
+*If you want to send a get request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below.*
 
 Get the friend count for `User1`
 
@@ -267,6 +267,8 @@ HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/
 	content = "Hello World!"
 })
 ```
+
+*If you want to send a post request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below.*
 
 Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User1` credentials
 
