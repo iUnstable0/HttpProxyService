@@ -109,7 +109,6 @@ app.get("/get", async (request, response) => {
             response.json(response2.data);
         })
         .catch(async function (error) {
-            console.log(error);
             if (error.status === 403) {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
@@ -173,7 +172,6 @@ app.post("/post", async (request, response) => {
             response.json(response2.data);
         })
         .catch(async function (error) {
-            console.log(error)
             if (error.response.status === 403) {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
