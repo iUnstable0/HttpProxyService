@@ -18,7 +18,7 @@ On the top right, click `New` and click `Create new app`
 
 ![Screen Shot 2564-11-13 at 11 17 14 AM](https://user-images.githubusercontent.com/46888825/141605439-e2b27ddd-d9a9-44fb-96dd-27b67001fbb7.png)
 
-Choose your app name, regoin and then click `Create app`
+Choose your app name, region and then click `Create app`
 
 ![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605458-fc0f6758-38fd-4534-9f34-f04f899f281c.png)
 
@@ -27,11 +27,11 @@ Click on GitHub and click `Connect to GitHub`
 ![Screen Shot 2564-11-13 at 11 21 58 AM](https://user-images.githubusercontent.com/46888825/141647663-c79566f9-4cbd-4c1d-b02e-ac1274e92674.png)
 ![Screen Shot 2564-11-13 at 11 23 03 AM](https://user-images.githubusercontent.com/46888825/141647665-9a97aba5-fabe-4fd4-9825-005239933f2a.png)
 
-Click `Authorize heroku` (You have to login into [Github](https://github.com) first)
+Click `Authorize Heroku` (You have to login into [Github](https://github.com) first)
 
 ![Screen Shot 2564-11-13 at 11 31 21 AM](https://user-images.githubusercontent.com/46888825/141605716-52563cef-2a17-49d3-af92-b5e95437b9df.png)
 
-When you've connected your GitHub account to [Heroku](https://www.heroku.com) , you will see this page.
+When you've connected your GitHub account to [Heroku](https://www.heroku.com), you will see this page.
 
 ![Screen Shot 2564-11-13 at 11 32 40 AM](https://user-images.githubusercontent.com/46888825/141605725-906925eb-3c94-45b0-9ebd-d6eb03e58ef1.png)
 
@@ -39,7 +39,7 @@ Fork [this repository](https://github.com/Unstable0/HttpProxyService) (https://g
 
 ![Screen Shot 2564-11-13 at 11 28 09 AM](https://user-images.githubusercontent.com/46888825/141605640-e14a4f1a-8c2e-45aa-9825-a3187b737c4c.png)
 
-After you forked this repository, go back to [Heroku](https://www.heroku.com) and search `HttpProxyService` then click `Connect`
+After you fork this repository, go back to [Heroku](https://www.heroku.com) and search `HttpProxyService` then click `Connect`
 
 ![Screen Shot 2564-11-13 at 11 34 12 AM](https://user-images.githubusercontent.com/46888825/141605767-d2a79d37-27bb-428c-99cb-1d25de00a8b9.png)
 
@@ -63,11 +63,11 @@ After you are logged into your [Heroku](https://www.heroku.com) account, click [
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Unstable0/HttpProxyService)
 
-Choose your app name, regoin and then click `Deploy app`
+Choose your app name, region and then click `Deploy app`
 
 ![Screen Shot 2564-11-12 at 4 47 48 PM](https://user-images.githubusercontent.com/46888825/141446973-b742a191-bb89-4b7e-b89f-37e9fe201d98.png)
 
-Wait until heroku finishes deploying your app
+Wait until Heroku finishes deploying your app
 
 After your app is deployed, click on `View`.
 
@@ -94,6 +94,8 @@ Click `Reveal Config Vars`
 
 Type your user in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
 
+*Notes: Your user name cannot be `PORT` because it will break the code*
+
 ![Screen Shot 2564-11-13 at 6 26 16 PM](https://user-images.githubusercontent.com/46888825/141641856-f90e2fa1-3972-4537-a993-e64652e48730.png)
 
 ![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663252-65c5d983-343c-4dc7-8576-78152a6e0e9a.png)
@@ -104,13 +106,13 @@ You can add multiple users.
 
 *Notes: You need to put your full cookie including the _|WARNING*
 
-Now follow the same steps but type in `password` in the `Key` box and type type in your password in the `Value` box (This password will be used to lock your app)
+Now follow the same steps but type in `password` in the `Key` box and type in your password in the `Value` box (This password will be used to lock your app)
 
 You can also use [this website](https://1password.com/password-generator/) (https://1password.com/password-generator/) to generate secure passwords.
 
 ![Screen Shot 2564-11-14 at 7 40 00 AM](https://user-images.githubusercontent.com/46888825/141663293-ba2ae7f4-fe1b-4ea4-9de4-419705d4a67e.png)
 
-*Notes: Your user and password must contain only underscores, letters (a-z), and numbers to prevent problems.*
+*Notes: Your password must contain only underscores, letters (a-z), and numbers to prevent problems.*
 
 Head over to `Deploy`
 
@@ -120,15 +122,15 @@ Scroll down and click `Deploy Branch`
 
 ![Screen Shot 2564-11-13 at 6 29 28 PM](https://user-images.githubusercontent.com/46888825/141642143-5143e42c-8ffd-49ad-888e-17d1375d3082.png)
 
-Now wait until [Heroku](https://www.heroku.com) finishes deploying your app.
+Now, wait until [Heroku](https://www.heroku.com) finishes deploying your app.
 
-*Notes: Your [Roblox](https://www.roblox.com) cookie resets everytime you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie and close the window so your cookie won't reset.*
+*Notes: Your [Roblox](https://www.roblox.com) cookie resets every time you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie, and close the window so your cookie won't reset.*
 
-*Everytime you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
+*Every time you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
 
 # Game Setup
 
-Create a new [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) in [ServerStorage](https://developer.roblox.com/en-us/api-reference/class/ServerStorage) and name it `HttpProxyService`
+Create a new [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) in [ServerStorage](https://developer.roblox.com/en-us/api-reference/class/ServerStorage) and rename it to `HttpProxyService`
 
 Replace the code inside your [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) with this [code](https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua) (https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua)
 
@@ -139,8 +141,6 @@ Go to line 5 where it says `local Url = ""`
 Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141606335-452e3f12-0f8d-4bbb-8c5b-630079a03bac.png)
-
-For example, my app URL is `https://example-app-0109.herokuapp.com` so the code will look like this
 
 ![Screen Shot 2564-11-13 at 11 46 45 AM](https://user-images.githubusercontent.com/46888825/141605997-295663fe-2b01-47da-9754-a873b89ff07f.png)
 
@@ -153,8 +153,6 @@ Go to line 6 where it says `local Password = ""`
 Type in your app password that you added earlier on the Config Vars
 
 ![Screen Shot 2564-11-13 at 6 49 36 PM](https://user-images.githubusercontent.com/46888825/141642632-1b486bb9-ec8b-40e2-91cf-ff0c93e9ddbf.png)
-
-For example, my app password is `examplepassword` so the code will look like this
 
 ![Screen Shot 2564-11-13 at 6 49 13 PM](https://user-images.githubusercontent.com/46888825/141642621-7d6f7790-760c-4e9e-9197-268c6c79c0de.png)
 
@@ -212,7 +210,7 @@ for Index, Asset in pairs(Data.data) do
 end
 ```
 
-*If you want to send a get request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below.*
+*If you want to send a get request to Roblox APIs with user credentials, add a `currentuser` header with the user name you added to the config vars. Examples below.*
 
 Get the friend count for `User1`
 
@@ -258,7 +256,7 @@ See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
 
 **Examples**
 
-Send a `Hello world!` message using discord webhook
+Send a `Hello world!` message using discord webhook.
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
@@ -294,7 +292,7 @@ HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/229343
 })
 ```
 
-*Notes: If the code output error 409, it means the gear is already favorited.*
+*Notes: If it warns error 409, it means the user already favorited the gear.*
 
 See https://catalog.roblox.com/docs#!/Favorites/post_v1_favorites_users_userId_assets_assetId_favorite
 
@@ -333,16 +331,16 @@ Scroll down and click `Deploy Branch` to update.
 
 ![Screen Shot 2564-11-13 at 11 57 54 AM](https://user-images.githubusercontent.com/46888825/141606231-64dd3446-f570-4a8e-b190-2f444e3cf2fe.png)
 
-*Notes: You can enable automatic deploy so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard)*
+*Notes: You can enable automatic deployment so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard)*
 
 ![Screen Shot 2564-11-13 at 11 58 26 AM](https://user-images.githubusercontent.com/46888825/141606245-27017421-970e-4676-be08-8e573a45f47e.png)
 
 **For fast method**
 
-*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy to heroku for now.*
+*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy it to Heroku for now.*
 
 - Make sure you have [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed on your computer.
-- If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using Standalone installation method.
+- If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using the Standalone installation method.
 
 ![Screen Shot 2564-11-12 at 9 15 15 PM](https://user-images.githubusercontent.com/46888825/141480996-bc80b47c-abff-4b1d-8a1e-6e150f7a827f.png)
 
@@ -352,26 +350,26 @@ If you get this message `unsupported arch: arm64` then close Terminal
 
 Press `Command + Space` to open Spotlight search
 
-Search for `Terminal`, Hold `Command` key and press `Enter` to reveal the file in Finder.
+Search `Terminal`, Hold `Command` key, and press `Enter` to reveal the file in Finder.
 
 Duplicate the `Terminal` app and rename it to `Terminal with Rosetta`
 
-Right click on `Terminal with Rosetta`, click `Get Info` and enable `Open using Rosetta`
+Right-click on `Terminal with Rosetta`, click `Get Info`, and enable `Open using Rosetta`
 
 ![Screen Shot 2564-11-12 at 9 28 35 PM](https://user-images.githubusercontent.com/46888825/141483020-c12fc3b2-eb98-42ab-bef4-30b07726f22d.png)
 
-After you've enabled it, reinstall heroku again but on `Terminal with Rosetta`.
+After you've enabled it, reinstall Heroku again but on `Terminal with Rosetta`.
 
 **After installing**
 
 Open `Terminal` or `Command Prompt` (Open `Terminal with Rosetta` for Macs with Apple chip)
 
-Type this on your command line `heroku login` then press `Enter`.
+Type this on your command line `Heroku login` then press `Enter`.
 
 Follow the instructions on your screen.
 
-If you get `IP address mismatch` error, press Control + C on your command line and type `heroku login -i`, then press `Enter` again.
+If you get an `IP address mismatch` error, press Control + C on your command line and type `Heroku login -i`, then press `Enter` again.
 
 Type in your email and password.
 
-When you're logged in, follow [this](https://youtube.com) tutorial.
+Once you have logged in, follow [this](https://youtube.com) tutorial.
