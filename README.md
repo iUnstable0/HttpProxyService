@@ -146,16 +146,6 @@ Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 (Make sure there is no `/` at the end of your URL)
 
-Go to line 6 where it says `local Password = ""`
-
-![Screen Shot 2564-11-13 at 6 48 07 PM](https://user-images.githubusercontent.com/46888825/141642598-6493721c-4dda-41c5-abfb-1e5a8f9c024e.png)
-
-Type in your app password that you added earlier on the Config Vars
-
-![Screen Shot 2564-11-13 at 6 49 36 PM](https://user-images.githubusercontent.com/46888825/141642632-1b486bb9-ec8b-40e2-91cf-ff0c93e9ddbf.png)
-
-![Screen Shot 2564-11-13 at 6 49 13 PM](https://user-images.githubusercontent.com/46888825/141642621-7d6f7790-760c-4e9e-9197-268c6c79c0de.png)
-
 # Usage
 
 # HttpProxyService:FormatParams
@@ -166,6 +156,8 @@ Type in your app password that you added earlier on the Config Vars
 | ------------- | ------------- | ------------- | ------------- |
 | url | [string](https://developer.roblox.com/en-us/articles/String) |  | true |
 | params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | false |
+
+**Returns** [Formatted url](https://developer.roblox.com/en-us/articles/String)
 
 **Example**
 
@@ -180,7 +172,28 @@ local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/
 print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
-# HttpProxyService:GetAsync
+# HttpProxyService:New
+
+**Parameters**
+
+| Name | Type | Default | Description | Required |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| password | [string](https://developer.roblox.com/en-us/articles/String) |  | Your app password | true |
+
+**Returns** [HttpProxy](https://github.com/Unstable0/HttpProxyService#httpproxyservicegetasync)
+
+**Examples**
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
+
+local Data = HttpProxy:GetAsync("https://www.roblox.com")
+
+print(Data)
+```
+
+# HttpProxy:GetAsync
 
 **Parameters**
 
@@ -191,19 +204,22 @@ print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Cate
 | nocache | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request stores (cache) the response | false |
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 
+**Returns** response body
+
 **Examples**
 
 Search roblox catalog with the keyword `Pants` and print the results
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
 local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/v1/search/items/details", {
 	Category = 3,
 	Keyword = "Pants"
 })
 
-local Data = HttpProxyService:GetAsync(FormattedData)
+local Data = HttpProxy:GetAsync(FormattedData)
 
 for Index, Asset in pairs(Data.data) do
 	print(Asset.name)
@@ -218,8 +234,9 @@ Get the friend count for `User1`
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
 	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 }) --> { count: number_of_friends }
 
@@ -232,8 +249,9 @@ Get the friend count for `User2`
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-local Data = HttpProxyService:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
+local Data = HttpProxy:GetAsync("https://friends.roblox.com/v1/my/friends/count", true, true, {
 	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
 }) --> { count: number_of_friends }
 
@@ -254,14 +272,17 @@ See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
 | headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) |  | Used to specify some HTTP request headers | false |
 | content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
 
+**Returns** result
+
 **Examples**
 
 Send a `Hello world!` message using discord webhook.
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-HttpProxyService:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
+HttpProxy:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
 	content = "Hello World!"
 })
 ```
@@ -274,8 +295,9 @@ Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Bod
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
 	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 })
 ```
@@ -286,8 +308,9 @@ Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Bod
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-HttpProxyService:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
 	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
 })
 ```
