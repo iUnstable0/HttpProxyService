@@ -2,14 +2,7 @@ local HttpProxyService = {}
 
 local HttpService = game:GetService("HttpService")
 
-local Url = "" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
-
-function GetUrl(Method, Link, Password)
-	return HttpProxyService:FormatParams(Url .. Method, {
-		password = Password,
-		url = HttpService:UrlEncode(Link)
-	})
-end
+local Url = "http://localhost" -- Your URL here. Example: https://app-name-here.herokuapp.com (Without '/' at the end)
 
 function IsTable(Object)
 	if typeof(Object) == "table" then
@@ -17,6 +10,13 @@ function IsTable(Object)
 	else
 		return false
 	end
+end
+
+function GetUrl(Method, Link, Password)
+	return HttpProxyService:FormatParams(Url .. Method, {
+		password = Password,
+		url = HttpService:UrlEncode(Link)
+	})
 end
 
 function HttpProxyService:New(Password)
@@ -85,6 +85,9 @@ function HttpProxyService:New(Password)
 		end
 	end
 	
+	--setfenv(Functions:GetAsync(), {})
+	--setfenv(Functions:PostAsync(), {})
+	
 	return Functions
 end
 
@@ -108,4 +111,14 @@ function HttpProxyService:FormatParams(Link, Params)
 	return Link
 end
 
-return HttpProxyService
+local Proxy = newproxy(true)
+local metatable = getmetatable(Proxy)
+
+metatable.__newindex = function()
+	error("This ModuleScript is read-only.")
+end
+
+metatable.__index = HttpProxyService
+metatable.__metatable = "Metatable is locked."
+
+return Proxy
