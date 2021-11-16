@@ -89,11 +89,12 @@ app.post("/get", async (request, response) => {
         });
     };
 
+    const headers = request.body;
     var newHeaders = {};
 
-    if ("currentuser" in request.body) {
-        if (request.body.currentuser in process.env) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.body.currentuser]
+    if ("currentuser" in headers) {
+        if (headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
@@ -104,7 +105,7 @@ app.post("/get", async (request, response) => {
         };
     };
 
-    for (const [header, value] of Object.entries(request.body)) {
+    for (const [header, value] of Object.entries(headers)) {
         if (!disallowedHeaders.includes(header)) {
             newHeaders[header] = value;
         };
@@ -121,6 +122,76 @@ app.post("/get", async (request, response) => {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
                 axios.get(request.query.url, {
+                    headers: newHeaders
+                })
+                    .then(function (response2) {
+                        response.json(response2.data);
+                    })
+                    .catch(function (error) {
+                        handleError(error, response);
+                    });
+            } else {
+                handleError(error, response);
+            };
+        });
+});
+
+app.post("/delete", async (request, response) => {
+    if (!request.query.url) {
+        return response.json({
+            error: {
+                message: "No URL Provided."
+            }
+        });
+    } else if (!request.query.password) {
+        return response.json({
+            error: {
+                message: "No Password Provided."
+            }
+        });
+    };
+
+    if (request.query.password !== process.env.password) {
+        return response.json({
+            error: {
+                message: "Invalid Password."
+            }
+        });
+    };
+
+    const headers = request.body;
+    var newHeaders = {};
+
+    if ("currentuser" in headers) {
+        if (headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[headers.currentuser]
+            newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
+        } else {
+            return response.json({
+                error: {
+                    message: "Invalid user."
+                }
+            });
+        };
+    };
+
+    for (const [header, value] of Object.entries(headers)) {
+        if (!disallowedHeaders.includes(header)) {
+            newHeaders[header] = value;
+        };
+    };
+
+    axios.delete(request.query.url, {
+        headers: newHeaders
+    })
+        .then(function (response2) {
+            response.json(response2.data);
+        })
+        .catch(async function (error) {
+            if (error.response.status === 403) {
+                newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
+
+                axios.delete(request.query.url, {
                     headers: newHeaders
                 })
                     .then(function (response2) {
@@ -158,11 +229,12 @@ app.post("/post", async (request, response) => {
         });
     };
 
+    const headers = request.body.Headers;
     var newHeaders = {};
 
-    if ("currentuser" in request.body.Headers) {
-        if (request.body.Headers.currentuser in process.env) {
-            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[request.body.Headers.currentuser]
+    if ("currentuser" in headers) {
+        if (headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[headers.currentuser]
             newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
         } else {
             return response.json({
@@ -173,7 +245,7 @@ app.post("/post", async (request, response) => {
         };
     };
 
-    for (const [header, value] of Object.entries(request.body.Headers)) {
+    for (const [header, value] of Object.entries(headers)) {
         if (!disallowedHeaders.includes(header)) {
             newHeaders[header] = value;
         };
@@ -190,6 +262,76 @@ app.post("/post", async (request, response) => {
                 newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
 
                 axios.post(request.query.url, request.body.Data, {
+                    headers: newHeaders
+                })
+                    .then(function (response2) {
+                        response.json(response2.data);
+                    })
+                    .catch(function (error) {
+                        handleError(error, response);
+                    });
+            } else {
+                handleError(error, response);
+            };
+        });
+});
+
+app.post("/patch", async (request, response) => {
+    if (!request.query.url) {
+        return response.json({
+            error: {
+                message: "No URL Provided."
+            }
+        });
+    } else if (!request.query.password) {
+        return response.json({
+            error: {
+                message: "No Password Provided."
+            }
+        });
+    };
+
+    if (request.query.password !== process.env.password) {
+        return response.json({
+            error: {
+                message: "Invalid Password."
+            }
+        });
+    };
+
+    const headers = request.body.Headers;
+    var newHeaders = {};
+
+    if ("currentuser" in headers) {
+        if (headers.currentuser in process.env) {
+            newHeaders.cookie = ".ROBLOSECURITY=" + process.env[headers.currentuser]
+            newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, false);
+        } else {
+            return response.json({
+                error: {
+                    message: "Invalid user."
+                }
+            });
+        };
+    };
+
+    for (const [header, value] of Object.entries(headers)) {
+        if (!disallowedHeaders.includes(header)) {
+            newHeaders[header] = value;
+        };
+    };
+
+    axios.patch(request.query.url, request.body.Data, {
+        headers: newHeaders
+    })
+        .then(function (response2) {
+            response.json(response2.data);
+        })
+        .catch(async function (error) {
+            if (error.response.status === 403) {
+                newHeaders["x-csrf-token"] = await getToken(newHeaders.cookie, true);
+
+                axios.patch(request.query.url, request.body.Data, {
                     headers: newHeaders
                 })
                     .then(function (response2) {
