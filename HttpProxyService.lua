@@ -23,8 +23,6 @@ function HttpProxyService:New(Password)
 	local Functions = {}
 	
 	function Functions:GetAsync(Link, Decode, FakeHeaders)
-		Link = GetUrl("/get", Link, Password)
-		
 		if FakeHeaders == nil then
 			FakeHeaders = {}
 		end
@@ -32,15 +30,22 @@ function HttpProxyService:New(Password)
 		if IsTable(FakeHeaders) then
 			FakeHeaders = HttpService:JSONEncode(FakeHeaders)
 		end
-
-		local Response = HttpService:PostAsync(Link, FakeHeaders)
+		
+		local Response = HttpService:RequestAsync({
+			Url = GetUrl("/get", Link, Password),
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = FakeHeaders
+		}).Body
 
 		local DecodedResponse = HttpService:JSONDecode(Response)
 
 		if DecodedResponse.error then
 			warn(DecodedResponse.error.message)
 			
-			return DecodedResponse.error.message
+			return DecodedResponse
 		end
 
 		if Decode == nil or Decode then
@@ -50,32 +55,27 @@ function HttpProxyService:New(Password)
 		end
 	end
 
-	function Functions:PostAsync(Link, Decode, Data, Headers, Content_Type)
-		Link = GetUrl("/post", Link, Password)
-
-		local Body = {
-			Data = {},
-			Headers = {}
-		}
-
-		if Data ~= nil then
-			Body.Data = Data
-		end
-
-		if Headers ~= nil then
-			Body.Headers = Headers
-		end
-
-		Body = HttpService:JSONEncode(Body)
-
-		local Response = HttpService:PostAsync(Link, Body, Enum.HttpContentType[Content_Type or "ApplicationJson"] or Content_Type or Enum.HttpContentType.ApplicationJson)
+	function Functions:PostAsync(Link, Decode, Data, Headers)
+		local Body = HttpService:JSONEncode({
+			Data = Data or {},
+			Headers = Headers or {}
+		})
+		
+		local Response = HttpService:RequestAsync({
+			Url = GetUrl("/post", Link, Password),
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = Body
+		}).Body
 
 		local DecodedResponse = HttpService:JSONDecode(Response)
 
 		if DecodedResponse.error then
 			warn(DecodedResponse.error.message)
 			
-			return DecodedResponse.error.message
+			return DecodedResponse
 		end
 
 		if Decode == nil or Decode then
@@ -85,8 +85,68 @@ function HttpProxyService:New(Password)
 		end
 	end
 	
-	--setfenv(Functions:GetAsync(), {})
-	--setfenv(Functions:PostAsync(), {})
+	function Functions:PatchAsync(Link, Decode, Data, Headers)
+		local Body = HttpService:JSONEncode({
+			Data = Data or {},
+			Headers = Headers or {}
+		})
+
+		local Response = HttpService:RequestAsync({
+			Url = GetUrl("/patch", Link, Password),
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = Body
+		}).Body
+		
+		local DecodedResponse = HttpService:JSONDecode(Response)
+
+		if DecodedResponse.error then
+			warn(DecodedResponse.error.message)
+
+			return DecodedResponse
+		end
+
+		if Decode == nil or Decode then
+			return DecodedResponse
+		else
+			return Response
+		end
+	end
+	
+	function Functions:DeleteAsync(Link, Decode, FakeHeaders)
+		if FakeHeaders == nil then
+			FakeHeaders = {}
+		end
+
+		if IsTable(FakeHeaders) then
+			FakeHeaders = HttpService:JSONEncode(FakeHeaders)
+		end
+
+		local Response = HttpService:RequestAsync({
+			Url = GetUrl("/delete", Link, Password),
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = FakeHeaders
+		}).Body
+
+		local DecodedResponse = HttpService:JSONDecode(Response)
+
+		if DecodedResponse.error then
+			warn(DecodedResponse.error.message)
+
+			return DecodedResponse
+		end
+
+		if Decode == nil or Decode then
+			return DecodedResponse
+		else
+			return Response
+		end
+	end
 	
 	return Functions
 end
