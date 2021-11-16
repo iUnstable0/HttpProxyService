@@ -2,60 +2,60 @@
 
 Easily Send HTTP Requests to Roblox API/Discord Webhooks
 
-# Recommended Setup Method
+# Setup
 
 You will need a [Heroku](https://www.heroku.com) and [GitHub](https://www.github.com) account.
 
-- Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com)
-- Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account
+_Create a [Heroku](https://www.heroku.com) account [here](https://signup.heroku.com) (https://signup.heroku.com)
+Login [here](https://id.heroku.com/login) (https://id.heroku.com/login) if you already have a [Heroku](https://www.heroku.com) account_
 
-- Create a [Github](https://github.com) account [here](https://github.com/signup?user_email=&source=form-home-signup) (https://github.com/signup?user_email=&source=form-home-signup)
-- Login [here](https://github.com/login) (https://github.com/login) if you already have a [GitHub](https://github.com) account
+_Create a [Github](https://github.com) account [here](https://github.com/signup?user_email=&source=form-home-signup) (https://github.com/signup?user_email=&source=form-home-signup)
+Login [here](https://github.com/login) (https://github.com/login) if you already have a [GitHub](https://github.com) account_
 
-After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to the [dashboard](https://dashboard.heroku.com/apps)
+- After you are logged into your [Heroku](https://www.heroku.com) account, click [here](https://dashboard.heroku.com/apps) to go to the [dashboard](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps)
 
-On the top right, click `New` and click `Create new app`
+- On the top right, click `New` and click `Create new app`
 
 ![Screen Shot 2564-11-13 at 11 17 14 AM](https://user-images.githubusercontent.com/46888825/141605439-e2b27ddd-d9a9-44fb-96dd-27b67001fbb7.png)
 
-Choose your app name, region and then click `Create app`
+- Choose your app name, region and then click `Create app`
 
 ![Screen Shot 2564-11-13 at 11 18 45 AM](https://user-images.githubusercontent.com/46888825/141605458-fc0f6758-38fd-4534-9f34-f04f899f281c.png)
 
-Click on GitHub and click `Connect to GitHub`
+- Click on GitHub and click `Connect to GitHub`
 
 ![Screen Shot 2564-11-13 at 11 21 58 AM](https://user-images.githubusercontent.com/46888825/141647663-c79566f9-4cbd-4c1d-b02e-ac1274e92674.png)
 ![Screen Shot 2564-11-13 at 11 23 03 AM](https://user-images.githubusercontent.com/46888825/141647665-9a97aba5-fabe-4fd4-9825-005239933f2a.png)
 
-Click `Authorize Heroku` (You have to login into [Github](https://github.com) first)
+- Click `Authorize Heroku` (You have to login into [Github](https://github.com) first)
 
 ![Screen Shot 2564-11-13 at 11 31 21 AM](https://user-images.githubusercontent.com/46888825/141605716-52563cef-2a17-49d3-af92-b5e95437b9df.png)
 
-When you've connected your GitHub account to [Heroku](https://www.heroku.com), you will see this page.
+- When you've connected your GitHub account to [Heroku](https://www.heroku.com), you will see this page.
 
 ![Screen Shot 2564-11-13 at 11 32 40 AM](https://user-images.githubusercontent.com/46888825/141605725-906925eb-3c94-45b0-9ebd-d6eb03e58ef1.png)
 
-Fork [this repository](https://github.com/Unstable0/HttpProxyService) (https://github.com/Unstable0/HttpProxyService)
+- Fork [this repository](https://github.com/Unstable0/HttpProxyService) (https://github.com/Unstable0/HttpProxyService)
 
 ![Screen Shot 2564-11-13 at 11 28 09 AM](https://user-images.githubusercontent.com/46888825/141605640-e14a4f1a-8c2e-45aa-9825-a3187b737c4c.png)
 
-After you fork this repository, go back to [Heroku](https://www.heroku.com) and search `HttpProxyService` then click `Connect`
+- After you fork this repository, go back to [Heroku](https://www.heroku.com) and search `HttpProxyService` then click `Connect`
 
 ![Screen Shot 2564-11-13 at 11 34 12 AM](https://user-images.githubusercontent.com/46888825/141605767-d2a79d37-27bb-428c-99cb-1d25de00a8b9.png)
 
-Now click `Deploy` and wait until [Heroku](https://www.heroku.com) finish deploying your app
+- Now click `Deploy` and wait until [Heroku](https://www.heroku.com) finish deploying your app
 
 ![Screen Shot 2564-11-13 at 11 40 00 AM](https://user-images.githubusercontent.com/46888825/141605863-0113ff48-bb8a-483d-8682-85101f24d12c.png)
 
-After your app is deployed, click on `View`.
+- After your app is deployed, click on `View`.
 
 ![Screen Shot 2564-11-13 at 11 40 29 AM](https://user-images.githubusercontent.com/46888825/141605871-7de372aa-ba97-49d6-b1bf-aa9c4683c80a.png)
 
-Copy your app URL, you will need this later.
+- Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605911-96640522-1ed9-44f7-b05b-46802dda519d.png)
 
-# Fast Setup Method (Not Recommended)
+<!-- # Fast Setup Method (Not Recommended)
 
 *Notes: You will have to delete your app and re-deploy to update the code if you are using this method, I recommend using the recommended method.*
 
@@ -76,69 +76,71 @@ After your app is deployed, click on `View`.
 Copy your app URL, you will need this later.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141605979-11a0774b-11fc-481d-adfa-40d094a11682.png)
+ -->
 
 # Environment Variables Setup
 
-Click [here](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps) to go to your [Heroku](https://www.heroku.com) account [dashboard](https://dashboard.heroku.com/apps)
+- Click [here](https://dashboard.heroku.com/apps) to go to your [Heroku](https://www.heroku.com) account [dashboard](https://dashboard.heroku.com/apps) (https://dashboard.heroku.com/apps)
 
-Click on your app
+- Click on your app
 
 ![Screen Shot 2564-11-13 at 11 56 30 AM](https://user-images.githubusercontent.com/46888825/141606204-42a6f873-99a3-466b-9f4c-b585c56d3f6a.png)
 
-Click `Settings`
+- Click `Settings`
 
 ![Screen Shot 2564-11-13 at 6 17 06 PM](https://user-images.githubusercontent.com/46888825/141636176-b8add2da-23dd-48c6-8bab-c7813b207465.png)
 
-Click `Reveal Config Vars`
+- Click `Reveal Config Vars`
+
 ![Screen Shot 2564-11-13 at 6 18 11 PM](https://user-images.githubusercontent.com/46888825/141636578-1c56cfcb-a0fa-4dc2-835b-79f12155f696.png)
 
-Type your user in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
+- Type your user in the `Key` box and paste your [Roblox](https://www.roblox.com) account cookie inside the `Value` box (You will need this for authentication)
 
-*Notes: Your user name cannot be `PORT` because it will break the code*
+_Notes: Your user name cannot be `PORT` because it will break the code_
 
 ![Screen Shot 2564-11-13 at 6 26 16 PM](https://user-images.githubusercontent.com/46888825/141641856-f90e2fa1-3972-4537-a993-e64652e48730.png)
 
 ![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663252-65c5d983-343c-4dc7-8576-78152a6e0e9a.png)
 
-You can add multiple users.
+- You can add multiple users.
 
 ![Screen Shot 2564-11-14 at 7 39 47 AM](https://user-images.githubusercontent.com/46888825/141663257-52946684-7dac-4024-ac38-7073e3b204cb.png)
 
-*Notes: You need to put your full cookie including the _|WARNING*
+_Notes: You need to put your full cookie including the \_|WARNING_
 
-Now follow the same steps but type in `password` in the `Key` box and type in your password in the `Value` box (This password will be used to lock your app)
+- Now follow the same steps but type in `password` in the `Key` box and type in your password in the `Value` box (This password will be used to lock your app)
 
-You can also use [this website](https://1password.com/password-generator/) (https://1password.com/password-generator/) to generate secure passwords.
+- You can also use [this website](https://1password.com/password-generator/) (https://1password.com/password-generator/) to generate secure passwords.
 
 ![Screen Shot 2564-11-14 at 7 40 00 AM](https://user-images.githubusercontent.com/46888825/141663293-ba2ae7f4-fe1b-4ea4-9de4-419705d4a67e.png)
 
-*Notes: Your password must contain only underscores, letters (a-z), and numbers to prevent problems.*
+_Notes: Your password must contain only underscores, letters (a-z), and numbers to prevent problems._
 
-Head over to `Deploy`
+- Head over to `Deploy`
 
 ![Screen Shot 2564-11-14 at 7 40 12 AM](https://user-images.githubusercontent.com/46888825/141663279-b7f24fc7-c8fd-4ada-b655-a454a967e907.png)
 
-Scroll down and click `Deploy Branch`
+- Scroll down and click `Deploy Branch`
 
 ![Screen Shot 2564-11-13 at 6 29 28 PM](https://user-images.githubusercontent.com/46888825/141642143-5143e42c-8ffd-49ad-888e-17d1375d3082.png)
 
-Now, wait until [Heroku](https://www.heroku.com) finishes deploying your app.
+- Now, wait until [Heroku](https://www.heroku.com) finishes deploying your app.
 
-*Notes: Your [Roblox](https://www.roblox.com) cookie resets every time you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie, and close the window so your cookie won't reset.*
+_Notes: Your [Roblox](https://www.roblox.com) cookie resets every time you log in/out of your account. If you want to use your alt account cookie then open incognito mode and login into your alt account, get your cookie, and close the window so your cookie won't reset._
 
-*Every time you update/add/delete a config var, you will have to deploy your app again for the changes to take effect.*
+_Every time you update/add/delete a config var, you will have to deploy your app again for the changes to take effect EVEN if you have Automatic Deployment enabled._
 
 # Game Setup
 
-Create a new [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) in [ServerStorage](https://developer.roblox.com/en-us/api-reference/class/ServerStorage) and rename it to `HttpProxyService`
+- Create a new [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) in [ServerStorage](https://developer.roblox.com/en-us/api-reference/class/ServerStorage) and rename it to `HttpProxyService`
 
-Replace the code inside your [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) with this [code](https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua) (https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua)
+- Replace the code inside your [ModuleScript](https://developer.roblox.com/en-us/api-reference/class/ModuleScript) with this [code](https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua) (https://github.com/Unstable0/HttpProxyService/blob/main/HttpProxyService.lua)
 
-Go to line 5 where it says `local Url = ""`
+- Go to line 5 where it says `local Url = ""`
 
 ![Screen Shot 2564-11-12 at 4 56 37 PM](https://user-images.githubusercontent.com/46888825/141448026-e9bb49d6-187d-4f01-9c02-6633339e38ab.png)
 
-Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
+- Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 ![Screen Shot 2564-11-13 at 11 41 55 AM](https://user-images.githubusercontent.com/46888825/141606335-452e3f12-0f8d-4bbb-8c5b-630079a03bac.png)
 
@@ -148,16 +150,18 @@ Paste your [Heroku](https://www.heroku.com) app URL that you copied earlier.
 
 # Usage
 
-# HttpProxyService:FormatParams
+### HttpProxyService:FormatParams
 
 **Parameters**
 
-| Name | Type | Default | Required |
-| ------------- | ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  | true |
-| params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | false |
+| Name   | Type                                                                                      | Default | Required |
+| ------ | ----------------------------------------------------------------------------------------- | ------- | -------- |
+| url    | [string](https://developer.roblox.com/en-us/articles/String)                              |         | true     |
+| params | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | false    |
 
-**Returns** [Formatted URL](https://developer.roblox.com/en-us/articles/String)
+**Returns**
+
+[Formatted URL](https://developer.roblox.com/en-us/articles/String)
 
 **Example**
 
@@ -172,15 +176,17 @@ local FormattedData = HttpProxyService:FormatParams("https://catalog.roblox.com/
 print(FormattedData) --> https://catalog.roblox.com/v1/search/items/details?Category=3&Keyword=Pants
 ```
 
-# HttpProxyService:New
+### HttpProxyService:New
 
 **Parameters**
 
-| Name | Type | Default | Description | Required |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| password | [string](https://developer.roblox.com/en-us/articles/String) |  | Your app password | true |
+| Name     | Type                                                         | Default | Description       | Required |
+| -------- | ------------------------------------------------------------ | ------- | ----------------- | -------- |
+| password | [string](https://developer.roblox.com/en-us/articles/String) |         | Your app password | true     |
 
-**Returns** [HttpProxy](https://github.com/Unstable0/HttpProxyService#httpproxyservicegetasync)
+**Returns**
+
+HttpProxy
 
 **Examples**
 
@@ -193,17 +199,19 @@ local Data = HttpProxy:GetAsync("https://www.roblox.com")
 print(Data)
 ```
 
-# HttpProxy:GetAsync
+### HttpProxy:GetAsync
 
 **Parameters**
 
-| Name | Type | Default | Description | Required |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  | The web address you are requesting data from | true |
-| decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
-| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | Used to specify some HTTP request headers | false |
+| Name    | Type                                                                                      | Default | Description                                  | Required |
+| ------- | ----------------------------------------------------------------------------------------- | ------- | -------------------------------------------- | -------- |
+| url     | [string](https://developer.roblox.com/en-us/articles/String)                              |         | The web address you are requesting data from | true     |
+| decode  | [bool](https://developer.roblox.com/en-us/articles/Boolean)                               | true    | Whether the request decodes the response     | false    |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | Used to specify some HTTP request headers    | false    |
 
-**Returns** Response Body
+**Returns**
+
+Response Body
 
 **Examples**
 
@@ -225,7 +233,7 @@ for Index, Asset in pairs(Data.data) do
 end
 ```
 
-*If you want to send a get request to Roblox APIs with user credentials, add a `currentuser` header with the user name you added to the config vars. Examples below.*
+_If you want to send a get request to Roblox APIs with user credentials, add a `currentuser` header with the user name you added to the config vars. Examples below._
 
 Get the friend count for `User1`
 
@@ -263,30 +271,33 @@ See https://friends.roblox.com/docs#!/Friends/get_v1_my_friends_count
 
 **Parameters**
 
-| Name | Type | Default | Description | Required |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| url | [string](https://developer.roblox.com/en-us/articles/String) |  | The web address you are requesting data from | true |
-| decode | [bool](https://developer.roblox.com/en-us/articles/Boolean) | true | Whether the request decodes the response | false |
-| data | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | The data being sent | false |
-| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {} | Used to specify some HTTP request headers | false |
-| content_type | [HttpContentType](https://developer.roblox.com/en-us/api-reference/enum/HttpContentType) | ApplicationJson | Modifies the value in the Content-Type header sent with the request | false |
+| Name    | Type                                                                                      | Default | Description                                  | Required |
+| ------- | ----------------------------------------------------------------------------------------- | ------- | -------------------------------------------- | -------- |
+| url     | [string](https://developer.roblox.com/en-us/articles/String)                              |         | The web address you are requesting data from | true     |
+| decode  | [bool](https://developer.roblox.com/en-us/articles/Boolean)                               | true    | Whether the request decodes the response     | false    |
+| data    | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | The data being sent                          | false    |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | Used to specify some HTTP request headers    | false    |
 
-**Returns** Result
+**Returns**
+
+Result
 
 **Examples**
 
-Send a `Hello world!` message using discord webhook.
+Send a `Hello!` message using discord webhook.
 
 ```lua
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
 HttpProxy:PostAsync("https://discord.com/api/webhooks/123456789012345678/83LgJzu7Qjmfyt1dunqEz651J1jh68kJijwkPaJuJnah7UjjekFgmRhti2_mLakIJneh", true, {
-	content = "Hello World!"
+	content = "Hello!"
 })
 ```
 
-*If you want to send a post request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below.*
+![Screen Shot 2564-11-16 at 8 05 34 PM](https://user-images.githubusercontent.com/46888825/141990519-6682dcfc-dbb8-43f3-a0be-75f6c3385adb.png)
+
+_If you want to send a post request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below._
 
 Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User1` credentials
 
@@ -296,7 +307,7 @@ Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Bod
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/USER_ID_HERE/assets/78730532/favorite", true, nil, {
 	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
 })
 ```
@@ -309,14 +320,119 @@ Favorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Bod
 local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
 local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
 
-HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/2293439462/assets/78730532/favorite", true, {}, {
+HttpProxy:PostAsync("https://catalog.roblox.com/v1/favorites/users/USER_ID_HERE/assets/78730532/favorite", true, nil, {
 	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
 })
 ```
 
-*Notes: If it warns error 409, it means the user already favorited the gear.*
+_Replace USER_ID_HERE with your roblox account user id, see https://users.roblox.com//docs#!/Users/get_v1_users_authenticated_
 
 See https://catalog.roblox.com/docs#!/Favorites/post_v1_favorites_users_userId_assets_assetId_favorite
+
+# HttpProxyService:PatchAsync
+
+**Parameters**
+
+| Name    | Type                                                                                      | Default | Description                                  | Required |
+| ------- | ----------------------------------------------------------------------------------------- | ------- | -------------------------------------------- | -------- |
+| url     | [string](https://developer.roblox.com/en-us/articles/String)                              |         | The web address you are requesting data from | true     |
+| decode  | [bool](https://developer.roblox.com/en-us/articles/Boolean)                               | true    | Whether the request decodes the response     | false    |
+| data    | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | The data being sent                          | false    |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | Used to specify some HTTP request headers    | false    |
+
+**Returns**
+
+Result
+
+**Examples**
+
+_If you want to send a patch request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below._
+
+Thumbs up the game [Crossroads](https://www.roblox.com/games/1818/Classic-Crossroads) (https://www.roblox.com/games/1818/Classic-Crossroads) using `User1` credentials
+
+![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663409-00d0f9ee-48fc-4a64-a30f-cb5939eb948a.png)
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
+
+local UniverseId = HttpProxy:GetAsync("https://games.roblox.com/v1/games/multiget-place-details?placeIds=1818", true, {
+	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
+})[1].universeId --Get the game universe ID
+
+HttpProxy:PatchAsync("https://games.roblox.com/v1/games/" .. tostring(UniverseId) .. "/user-votes", true, {
+	vote = true
+}, {
+	currentuser = "User1" --Replace with the user you added in the config var (Case sensitive)
+}) --Thumbs up the game
+```
+
+Thumbs up the game [Crossroads](https://www.roblox.com/games/1818/Classic-Crossroads) (https://www.roblox.com/games/1818/Classic-Crossroads) using `User2` credentials
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
+
+local UniverseId = HttpProxy:GetAsync("https://games.roblox.com/v1/games/multiget-place-details?placeIds=1818", true, {
+	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
+})[1].universeId --Get the game universe ID
+
+HttpProxy:PatchAsync("https://games.roblox.com/v1/games/" .. tostring(UniverseId) .. "/user-votes", true, {
+	vote = true
+}, {
+	currentuser = "User2" --Replace with the user you added in the config var (Case sensitive)
+}) --Thumbs up the game
+```
+
+_For thumbs down, change `vote` to `false`._
+
+See https://games.roblox.com//docs#!/Votes/patch_v1_games_universeId_user_votes
+
+# HttpProxyService:DeleteAsync
+
+**Parameters**
+
+| Name    | Type                                                                                      | Default | Description                                  | Required |
+| ------- | ----------------------------------------------------------------------------------------- | ------- | -------------------------------------------- | -------- |
+| url     | [string](https://developer.roblox.com/en-us/articles/String)                              |         | The web address you are requesting data from | true     |
+| decode  | [bool](https://developer.roblox.com/en-us/articles/Boolean)                               | true    | Whether the request decodes the response     | false    |
+| headers | [dictionary](https://education.roblox.com/en-us/resources/intro-to-dictionaries---series) | {}      | Used to specify some HTTP request headers    | false    |
+
+**Returns**
+
+Response Body
+
+**Examples**
+
+_If you want to send a delete request to Roblox APIs with user credentials, add a `currentuser` header with the user name that you added to the config vars. Examples below._
+
+Unfavorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User1` credentials
+
+![Screen Shot 2564-11-14 at 7 39 20 AM](https://user-images.githubusercontent.com/46888825/141663409-00d0f9ee-48fc-4a64-a30f-cb5939eb948a.png)
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
+
+HttpProxy:DeleteAsync("https://catalog.roblox.com/v1/favorites/users/USER_ID_HERE/assets/78730532/favorite", true, {
+	currentuser = "User1"
+})
+```
+
+Unfavorite the gear [Body Swap Potion](https://www.roblox.com/catalog/78730532/Body-Swap-Potion) (https://www.roblox.com/catalog/78730532/Body-Swap-Potion) using `User2` credentials
+
+```lua
+local HttpProxyService = require(game:GetService("ServerStorage"):WaitForChild("HttpProxyService"))
+local HttpProxy = HttpProxyService:New(Password here) --Put your app password here
+
+HttpProxy:DeleteAsync("https://catalog.roblox.com/v1/favorites/users/USER_ID_HERE/assets/78730532/favorite", true, {
+	currentuser = "User2"
+})
+```
+
+_Replace USER_ID_HERE with your roblox account user id, see https://users.roblox.com//docs#!/Users/get_v1_users_authenticated_
+
+See https://catalog.roblox.com/docs#!/Favorites/delete_v1_favorites_users_userId_assets_assetId_favorite
 
 # Updating
 
@@ -353,13 +469,13 @@ Scroll down and click `Deploy Branch` to update.
 
 ![Screen Shot 2564-11-13 at 11 57 54 AM](https://user-images.githubusercontent.com/46888825/141606231-64dd3446-f570-4a8e-b190-2f444e3cf2fe.png)
 
-*Notes: You can enable automatic deployment so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard)*
+_Notes: You can enable automatic deployment so next time when you fetch the latest version on your repository, Heroku will re-deploy your app automatically (Meaning you do not need to re-deploy on your app dashboard)_
 
 ![Screen Shot 2564-11-13 at 11 58 26 AM](https://user-images.githubusercontent.com/46888825/141606245-27017421-970e-4676-be08-8e573a45f47e.png)
 
-**For fast method**
+<!-- **For fast method**
 
-*Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy it to Heroku for now.*
+_Notes: The video tutorial is not finished yet because I don't have a video editing program. You will have to delete the app and re-deploy it to Heroku for now._
 
 - Make sure you have [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed on your computer.
 - If you are on Mac OS, you will need to install [homebrew](https://brew.sh) or install using the Standalone installation method.
@@ -395,3 +511,4 @@ If you get an `IP address mismatch` error, press Control + C on your command lin
 Type in your email and password.
 
 Once you have logged in, follow [this](https://youtube.com) tutorial.
+ -->
