@@ -1,6 +1,6 @@
 # HttpProxyService
 
-Send HTTP requests to Roblox APIs or Discord Webhooks in-game
+Easily Send HTTP Requests to Roblox API/Discord Webhooks
 
 # Recommended Setup Method
 
