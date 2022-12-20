@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/Unstable0/Roblox-Proxy#readme",
   "dependencies": {
-    "axios": "^0.24.0",
-    "dotenv": "^10.0.0",
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1"
   }
 }
