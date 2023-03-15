@@ -1,5 +1,8 @@
 # HttpProxyService
 
+THIS IS VERY OUTDATED AND PROLLY DOESNT WORK ANYMORE
+ALSO HEROKU REMOVED FREE TIER SO RIP
+
 Easily Send HTTP Requests to Roblox API/Discord Webhooks
 
 # Setup
